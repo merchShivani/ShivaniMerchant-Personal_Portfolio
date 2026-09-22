@@ -49,7 +49,7 @@ function Portrait({ className = "" }: { className?: string }) {
       <img
         src={PORTRAIT_URL}
         alt="Shivani Merchant"
-        className="h-full w-full object-cover object-[35%_center]"
+        className="h-full w-full object-cover object-[62%_center]"
         loading="eager"
       />
     </div>
