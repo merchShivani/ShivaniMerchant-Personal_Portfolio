@@ -7,4 +7,5 @@
 - [ ] Later: Linktree-style page (user will request)
 
 ## Open
-- [ ] Headline font change: user wants creative/fun — show options (prototypes v1/v2/v3) + background color palettes; awaiting user pick
+- [ ] Headline font: show new font prototypes (italic serif / elegant serif / rounded); user rejected first batch
+- [ ] Background: user wants more colorful — add multi-color pastel washes/panels
