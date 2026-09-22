@@ -219,7 +219,7 @@ function Work() {
               {projects.map((p, i) => (
                 <Reveal key={p.title} delay={i * 80}>
                   <article className="flex h-full flex-col rounded-[1.75rem] bg-paper px-6 py-7">
-                    <p className="eyebrow text-orange">{p.tags[0]}</p>
+                    <p className="eyebrow text-orange">{p.tags[0] ?? "Work"}</p>
                     <h3 className="display mt-3 text-3xl text-orange-deep">{p.title}</h3>
                     <p className="mt-2 text-xs font-semibold tracking-wide text-ink/60 uppercase">
                       {p.kicker}
