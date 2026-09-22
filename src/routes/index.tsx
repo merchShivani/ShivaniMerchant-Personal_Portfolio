@@ -59,12 +59,12 @@ function Hero() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="display mt-5 text-[17vw] leading-[0.82] md:text-[9.5vw]">
+            <h1 className="display mt-5 text-[15vw] leading-[0.84] md:text-[6.6vw]">
               SHIVANI
               <br />
-              <span className="inline-flex items-baseline gap-3">
-                MERCHANT
-                <span className="script hidden text-pink text-[4vw] md:inline">creative</span>
+              MERCHANT
+              <span className="script mt-2 block text-[9vw] text-pink md:text-[3vw]">
+                creative technologist
               </span>
             </h1>
           </Reveal>
@@ -152,9 +152,7 @@ function About() {
           <div className="md:col-span-6">
             <Reveal>
               <h2 className="display text-4xl md:text-6xl">
-                An engineer who kept
-                <br />
-                wandering toward
+                An engineer who kept wandering
                 <span className="script text-pink"> the story.</span>
               </h2>
             </Reveal>
