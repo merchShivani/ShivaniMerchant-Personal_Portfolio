@@ -166,7 +166,7 @@ function About() {
               </p>
               <p className="script mt-7 text-4xl text-pink-hot md:text-5xl">Shivani ♡</p>
               <p className="eyebrow mt-8 text-ink/50">
-                M.S. Product Innovation · University of Arkansas · {education[0].period}
+                M.S. Product Innovation · University of Arkansas · {education[0]?.period}
               </p>
             </div>
             <div className="md:col-span-6 md:pl-8">
