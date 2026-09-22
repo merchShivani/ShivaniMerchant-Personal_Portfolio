@@ -331,8 +331,9 @@ function Experience() {
                       ))}
                     </ul>
                   </article>
-                ))}
+                </Reveal>
               ))}
+
             </div>
           </div>
         </Reveal>
