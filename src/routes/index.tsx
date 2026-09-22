@@ -39,15 +39,19 @@ export const Route = createFileRoute("/")({
 
 /* ---------- shared pieces ---------- */
 
+const PORTRAIT_URL = "/__l5e/assets-v1/223fa0cc-01ee-4a73-941b-819f00f3add8/shivani-portrait.jpg";
+
 function Portrait({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`flex items-center justify-center overflow-hidden rounded-3xl bg-blue/15 ring-1 ring-blue/25 ${className}`}
+      className={`overflow-hidden rounded-3xl bg-blue/15 ring-1 ring-blue/25 ${className}`}
     >
-      <div className="px-6 py-10 text-center">
-        <p className="script text-4xl text-blue">Shivani</p>
-        <p className="eyebrow mt-3 text-blue/60">Photo coming soon</p>
-      </div>
+      <img
+        src={PORTRAIT_URL}
+        alt="Shivani Merchant"
+        className="h-full w-full object-cover object-[62%_center]"
+        loading="eager"
+      />
     </div>
   );
 }
