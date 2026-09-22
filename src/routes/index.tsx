@@ -307,7 +307,7 @@ function Work() {
 function Experience() {
   return (
     <section id="experience" className="px-3 pt-3 md:px-6">
-      <div className="mx-auto max-w-[1400px] grid gap-3 md:grid-cols-12">
+      <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <div className="rounded-[2rem] bg-butter px-6 py-10 md:px-10 md:py-14">
             <h2 className="display text-4xl text-blue md:text-6xl">Experience</h2>
