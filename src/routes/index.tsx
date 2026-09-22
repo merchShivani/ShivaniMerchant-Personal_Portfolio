@@ -49,7 +49,7 @@ function Hero() {
         <div className="relative overflow-hidden bg-paper px-5 py-8 md:col-span-6 md:px-8 md:py-10">
           <div className="grid min-h-[430px] items-center gap-4 lg:grid-cols-[0.78fr_1.22fr]">
             <div className="relative z-10">
-              <p className="display text-[clamp(3rem,5.2vw,5.5rem)] leading-[0.88] text-navy">Hi, I’m<br />Shivani<span className="align-top text-3xl text-gold">✦</span></p>
+              <h1 className="display text-[clamp(3rem,5.2vw,5.5rem)] leading-[0.88] text-navy">Hi, I’m<br />Shivani<span className="align-top text-3xl text-gold">✦</span></h1>
               <p className="mt-5 max-w-sm text-sm leading-6 text-navy/75">I build thoughtful digital experiences with technology, a curious mind, and a heart for people.</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {["Product thinker", "Designer", "Problem solver", "Creator", "Collaborator"].map((item, i) => (
