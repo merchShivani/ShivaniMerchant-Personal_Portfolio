@@ -152,7 +152,7 @@ function About() {
           <div className="md:col-span-6">
             <Reveal>
               <h2 className="display text-4xl md:text-6xl">
-                A engineer who kept
+                An engineer who kept
                 <br />
                 wandering toward
                 <span className="script text-pink"> the story.</span>
