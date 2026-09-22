@@ -92,6 +92,13 @@
   --pink-hot: oklch(0.71 0.16 358);
   --peach: oklch(0.91 0.055 75);
   --butter: oklch(0.88 0.09 80);
+  --navy: oklch(0.28 0.065 246);
+  --coral: oklch(0.72 0.15 18);
+  --gold: oklch(0.78 0.15 76);
+  --lilac: oklch(0.9 0.055 300);
+  --sky: oklch(0.92 0.04 230);
+  --mint: oklch(0.92 0.045 165);
+  --canvas: oklch(0.94 0.015 78);
   --font-display: "Archivo Black", "Anton", Impact, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
   --font-script: "Caveat", "DM Sans", cursive;
@@ -168,6 +175,13 @@
   --color-pink-hot: var(--pink-hot);
   --color-peach: var(--peach);
   --color-butter: var(--butter);
+  --color-navy: var(--navy);
+  --color-coral: var(--coral);
+  --color-gold: var(--gold);
+  --color-lilac: var(--lilac);
+  --color-sky: var(--sky);
+  --color-mint: var(--mint);
+  --color-canvas: var(--canvas);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
   --font-script: var(--font-script);
@@ -190,7 +204,7 @@
 @utility display {
   font-family: var(--font-display);
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   line-height: 0.9;
   text-transform: uppercase;
 }
@@ -205,9 +219,24 @@
 @utility eyebrow {
   font-family: var(--font-body);
   font-size: 0.7rem;
-  letter-spacing: 0.24em;
+  letter-spacing: 0;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+@utility portfolio-grid {
+  display: grid;
+  width: min(100% - 1rem, 1600px);
+  margin-inline: auto;
+  gap: 0.5rem;
+  padding-block: 0.25rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+@media (max-width: 767px) {
+  .portfolio-grid > * {
+    grid-column: 1 / -1;
+  }
 }
 
 @utility rule-soft {
