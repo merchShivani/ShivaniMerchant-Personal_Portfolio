@@ -152,8 +152,9 @@ function About() {
           <div className="md:col-span-6">
             <Reveal>
               <h2 className="display text-4xl md:text-6xl">
-                An engineer who kept wandering
+                An engineer who kept wandering toward
                 <span className="script text-pink"> the story.</span>
+
               </h2>
             </Reveal>
             <Reveal delay={120}>
