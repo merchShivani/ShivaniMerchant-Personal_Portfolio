@@ -69,7 +69,7 @@ function Hero() {
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-butter px-6 py-10 md:px-12 md:py-14">
-            <div className="grid items-end gap-8 md:grid-cols-12">
+            <div className="grid items-center gap-8 md:grid-cols-12">
               <div className="md:col-span-7">
                 <p className="display text-2xl text-blue md:text-3xl">Product</p>
                 <h1 className="display text-[19vw] leading-[0.82] text-blue md:text-[9.5vw]">
