@@ -162,6 +162,9 @@
 @theme inline {
   --color-ink: var(--ink);
   --color-paper: var(--paper);
+  --color-butter: var(--butter);
+  --color-blue: var(--blue);
+  --color-blue-deep: var(--blue-deep);
   --color-pink: var(--pink);
   --color-pink-soft: var(--pink-soft);
   --color-red: var(--red);
@@ -179,35 +182,44 @@
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
-    background: var(--pink);
-    color: var(--ink);
+    background: var(--blue);
+    color: var(--paper);
   }
 }
 
 @utility display {
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 0.9;
+  text-transform: uppercase;
 }
 
 @utility script {
   font-family: var(--font-script);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0;
+  text-transform: none;
 }
 
 @utility eyebrow {
   font-family: var(--font-body);
   font-size: 0.7rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 @utility rule-soft {
   border-top: 1px solid color-mix(in oklch, var(--ink) 15%, transparent);
 }
+
+@utility panel {
+  border-radius: 1.75rem;
+  padding: 1.75rem;
+}
+
+
 
 @layer utilities {
   .reveal {
