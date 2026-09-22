@@ -72,7 +72,7 @@ function Hero() {
           <img src={landscape} alt="Watercolor mountains and pagoda" width={1920} height={640} className="pointer-events-none absolute inset-x-0 bottom-0 h-28 w-full object-cover object-bottom opacity-75" />
         </div>
 
-        <div id="about" className="relative bg-paper px-6 py-8 md:col-span-3">
+        <div id="about" className="relative bg-peach px-6 py-8 md:col-span-3">
           <h2 className="display text-2xl text-navy">A little about me <Petal /></h2>
           <p className="mt-5 text-sm leading-6 text-navy/70">I’m a product innovator and creative technologist who loves turning complex ideas into clear, human experiences.</p>
           <p className="mt-3 text-sm leading-6 text-navy/70">My path moves through computer science, data, UX, media and product innovation.</p>
@@ -87,7 +87,7 @@ function Hero() {
           </div>
         </div>
 
-        <div id="skills" className="bg-paper px-5 py-8 md:col-span-3">
+        <div id="skills" className="bg-lilac px-5 py-8 md:col-span-3">
           <h2 className="display text-2xl text-navy">My toolkit ⚒</h2>
           <p className="mt-2 text-xs leading-5 text-navy/65">Technical, but technology is only one part of how I solve problems.</p>
           <div className="mt-5 space-y-3">
@@ -131,7 +131,7 @@ function Work() {
         </div>
       </div>
 
-      <div id="experience" className="bg-paper px-5 py-8 md:col-span-5">
+      <div id="experience" className="bg-sky px-5 py-8 md:col-span-5">
         <h2 className="display text-2xl text-navy">Experience <Petal /></h2>
         <p className="mt-1 text-xs text-navy/60">Where I’ve been, what I’ve done, and what I’m excited for next.</p>
         <div className="relative mt-6 space-y-5 border-l border-navy/15 pl-5">
@@ -182,13 +182,13 @@ function Story() {
 function More() {
   return (
     <section className="portfolio-grid">
-      <div className="bg-paper px-5 py-8 md:col-span-6">
+      <div className="bg-pink px-5 py-8 md:col-span-6">
         <h2 className="display text-2xl text-navy">Recognition & leadership ✦</h2>
         <div className="mt-5 grid gap-2 sm:grid-cols-2">{awards.slice(0, 4).map((award) => <div key={award.name} className="rounded-md bg-butter px-4 py-3"><p className="text-xs font-bold text-navy">{award.name}</p><p className="mt-1 text-[10px] text-navy/50">{award.date}</p></div>)}</div>
       </div>
-      <div className="bg-paper px-5 py-8 md:col-span-6">
+      <div className="bg-mint px-5 py-8 md:col-span-6">
         <h2 className="display text-2xl text-navy">Community</h2>
-        <div className="mt-5 space-y-2">{leadership.map((item) => <div key={item.role} className="flex items-center justify-between gap-4 rounded-md bg-mint px-4 py-3"><p className="text-xs font-bold text-navy">{item.role}</p><p className="shrink-0 text-[9px] text-navy/50">{item.period}</p></div>)}</div>
+        <div className="mt-5 space-y-2">{leadership.map((item) => <div key={item.role} className="flex items-center justify-between gap-4 rounded-md bg-paper/85 px-4 py-3"><p className="text-xs font-bold text-navy">{item.role}</p><p className="shrink-0 text-[9px] text-navy/50">{item.period}</p></div>)}</div>
       </div>
     </section>
   );
@@ -209,5 +209,5 @@ function Contact() {
 }
 
 function Index() {
-  return <main className="min-h-screen bg-canvas text-navy"><Nav /><Hero /><Work /><Story /><More /><Contact /><footer className="flex flex-wrap items-center justify-between gap-3 border-t border-navy/10 bg-paper px-6 py-5 text-[10px] text-navy/55"><p>© {new Date().getFullYear()} Shivani Merchant</p><p>Built with curiosity, creativity and a lot of ♡</p></footer></main>;
+  return <main className="min-h-screen page-wash text-navy"><Nav /><Hero /><Work /><Story /><More /><Contact /><footer className="flex flex-wrap items-center justify-between gap-3 border-t border-navy/10 bg-navy px-6 py-5 text-[10px] text-paper/65"><p>© {new Date().getFullYear()} Shivani Merchant</p><p>Built with curiosity, creativity and a lot of ♡</p></footer></main>;
 }

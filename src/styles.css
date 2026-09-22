@@ -239,6 +239,17 @@
   }
 }
 
+@utility page-wash {
+  background-color: oklch(0.95 0.03 85);
+  background-image:
+    radial-gradient(60rem 42rem at 4% 0%, color-mix(in oklch, var(--peach) 70%, transparent), transparent 62%),
+    radial-gradient(52rem 38rem at 100% 12%, color-mix(in oklch, var(--pink) 75%, transparent), transparent 62%),
+    radial-gradient(56rem 44rem at 12% 52%, color-mix(in oklch, var(--sky) 80%, transparent), transparent 62%),
+    radial-gradient(50rem 38rem at 92% 58%, color-mix(in oklch, var(--lilac) 80%, transparent), transparent 64%),
+    radial-gradient(62rem 42rem at 40% 100%, color-mix(in oklch, var(--mint) 75%, transparent), transparent 62%),
+    radial-gradient(40rem 30rem at 70% 35%, color-mix(in oklch, var(--butter) 60%, transparent), transparent 65%);
+}
+
 @utility rule-soft {
   border-top: 1px solid color-mix(in oklch, var(--ink) 15%, transparent);
 }
