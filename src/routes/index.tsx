@@ -95,7 +95,7 @@ function Hero() {
               <p className="script absolute bottom-10 -left-1 z-20 -rotate-3 text-xl text-navy">Let’s build<br />something ↘</p>
             </div>
           </div>
-          <img src={landscape} alt="Watercolor mountains and pagoda" width={1920} height={640} className="pointer-events-none absolute inset-x-0 bottom-0 h-32 w-full object-cover object-bottom opacity-70" />
+          <img src={landscape} alt="Watercolor mountains and pagoda" width={1920} height={640} className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-24 w-full object-cover object-bottom opacity-55" />
         </div>
 
         <div id="about" className="card-soft relative overflow-hidden px-6 py-8 md:col-span-3">
