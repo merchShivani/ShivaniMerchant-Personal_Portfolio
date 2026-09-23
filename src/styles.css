@@ -365,3 +365,21 @@
     }
   }
 }
+
+@keyframes petal-drift {
+  0% {
+    opacity: 0;
+    transform: translate(0, -6px) rotate(var(--pr, 0deg)) scale(0.5);
+  }
+  12% {
+    opacity: var(--po, 0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--px, 20px), 96px) rotate(calc(var(--pr, 0deg) + 200deg)) scale(1);
+  }
+}
+
+@utility petal-drift {
+  animation: petal-drift 1.5s ease-out forwards;
+}
