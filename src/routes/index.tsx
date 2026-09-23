@@ -314,7 +314,7 @@ function Contact() {
 
 function Splash() {
   return (
-    <div aria-hidden className="splash-fade fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-navy" style={{ animationDelay: "1.9s" }}>
+    <div aria-hidden className="splash-fade fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-[oklch(0.25_0.07_318)]" style={{ animationDelay: "2.3s" }}>
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="splash-bloom absolute left-1/4 top-1/4 h-72 w-72 rounded-full bg-pink/15 blur-3xl" />
         <div className="splash-bloom absolute right-1/5 bottom-1/4 h-64 w-64 rounded-full bg-lilac/15 blur-3xl" style={{ animationDelay: "0.4s" }} />
@@ -339,7 +339,7 @@ function Index() {
     if (sessionStorage.getItem("sm-splash-seen")) return;
     sessionStorage.setItem("sm-splash-seen", "1");
     setSplash("showing");
-    const timer = window.setTimeout(() => setSplash("hidden"), 2650);
+    const timer = window.setTimeout(() => setSplash("hidden"), 3000);
     return () => window.clearTimeout(timer);
   }, []);
 
