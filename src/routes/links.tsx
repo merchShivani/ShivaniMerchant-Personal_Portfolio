@@ -30,7 +30,7 @@ export const Route = createFileRoute("/links")({
 
 const links = [
   { label: "View My Portfolio", icon: "▤", href: "/", internal: true, tone: "bg-navy text-paper", note: "The full experience ✦" },
-  { label: "View My Resume", icon: "✎", href: RESUME_URL, internal: false, tone: "bg-white text-navy", note: "Experience & education" },
+  { label: "View My Resume", icon: "✎", href: RESUME_URL, internal: false, tone: "bg-white text-navy", note: "Experience & education", download: true },
   { label: "LinkedIn", icon: "in", href: "https://www.linkedin.com/in/shmerchant006", internal: false, tone: "bg-pink/70 text-navy", note: "/in/shmerchant006" },
   { label: "GitHub", icon: "</>", href: "https://github.com/merchShivani", internal: false, tone: "bg-lilac/70 text-navy", note: "github.com/merchShivani" },
   { label: "Email Me", icon: "✉", href: `mailto:${contact.email}`, internal: false, tone: "bg-butter/70 text-navy", note: contact.email },
