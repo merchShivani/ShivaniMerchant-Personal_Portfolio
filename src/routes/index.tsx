@@ -232,11 +232,13 @@ function FlipCard({ project, shot }: { project: (typeof projects)[number]; shot:
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 flex flex-col overflow-hidden rounded-xl bg-navy p-4 text-paper [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <p className="eyebrow text-[9px] text-gold">{project.kicker}</p>
-          <p className="mt-2 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">The problem — </span>{project.problem}</p>
-          <p className="mt-1.5 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">My approach — </span>{project.approach}</p>
-          <p className="mt-1.5 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">The outcome — </span>{project.outcome}</p>
+        <div className="absolute inset-0 flex flex-col rounded-xl bg-navy p-4 text-paper [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <p className="eyebrow text-[9px] text-gold">{project.kicker}</p>
+            <p className="mt-2 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">The problem — </span>{project.problem}</p>
+            <p className="mt-1.5 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">My approach — </span>{project.approach}</p>
+            <p className="mt-1.5 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">The outcome — </span>{project.outcome}</p>
+          </div>
           <div className="mt-auto pt-2">
             <div className="flex flex-wrap gap-1">
               {project.tags.map((tag) => <span key={tag} className="rounded-md bg-paper/15 px-2 py-1 text-[8px] font-bold text-paper/85">{tag}</span>)}
