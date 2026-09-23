@@ -5,9 +5,10 @@ import portraitDesktop from "@/assets/portrait-desktop.webp.asset.json";
 import blossomMobile from "@/assets/blossom-mobile.webp.asset.json";
 import blossomDesktop from "@/assets/blossom-desktop.webp.asset.json";
 import { contact } from "@/data/portfolio";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
-// ⚠️ PLACEHOLDER — replace with the real link to your resume (PDF or page).
-export const RESUME_URL = "#";
+export const RESUME_URL = resumeAsset.url;
+
 
 export const Route = createFileRoute("/links")({
   head: () => ({
@@ -27,9 +28,12 @@ export const Route = createFileRoute("/links")({
   component: LinksPage,
 });
 
-const links = [
+type LinkItem = { label: string; icon: string; href: string; internal: boolean; tone: string; note: string; download?: boolean };
+
+const links: LinkItem[] = [
+
   { label: "View My Portfolio", icon: "▤", href: "/", internal: true, tone: "bg-navy text-paper", note: "The full experience ✦" },
-  { label: "View My Resume", icon: "✎", href: RESUME_URL, internal: false, tone: "bg-white text-navy", note: "Experience & education" },
+  { label: "View My Resume", icon: "✎", href: RESUME_URL, internal: false, tone: "bg-white text-navy", note: "Experience & education", download: true },
   { label: "LinkedIn", icon: "in", href: "https://www.linkedin.com/in/shmerchant006", internal: false, tone: "bg-pink/70 text-navy", note: "/in/shmerchant006" },
   { label: "GitHub", icon: "</>", href: "https://github.com/merchShivani", internal: false, tone: "bg-lilac/70 text-navy", note: "github.com/merchShivani" },
   { label: "Email Me", icon: "✉", href: `mailto:${contact.email}`, internal: false, tone: "bg-butter/70 text-navy", note: contact.email },
@@ -102,7 +106,7 @@ function LinksPage() {
                 {link.internal ? (
                   <Link to="/">{inner}</Link>
                 ) : (
-                  <a href={link.href} target={link.href.startsWith("mailto:") ? undefined : "_blank"} rel="noreferrer">{inner}</a>
+                  <a href={link.href} target={link.href.startsWith("mailto:") ? undefined : "_blank"} rel="noreferrer" download={link.download ? "Shivani-Merchant-Resume.pdf" : undefined}>{inner}</a>
                 )}
               </Reveal>
             );

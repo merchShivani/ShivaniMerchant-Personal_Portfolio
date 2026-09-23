@@ -10,4 +10,5 @@
 - [x] Correct the hero CTA overlap and redesign Toolkit on desktop
 - [x] Add a pastel illustrated background to the "Hi, I'm Shivani" hero card (gradient wash, blurred blobs, blossom/sparkle accents), verified on desktop + mobile
 - [x] Add a /links digital business card page (mobile-first, matching portfolio identity)
+- [x] Attach uploaded resume PDF to the /links resume button (CDN-hosted, downloads as Shivani-Merchant-Resume.pdf)
 
