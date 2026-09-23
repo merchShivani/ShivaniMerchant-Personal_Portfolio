@@ -312,9 +312,40 @@ function Contact() {
   );
 }
 
+function Splash() {
+  return (
+    <div aria-hidden className="splash-fade fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-navy" style={{ animationDelay: "1.9s" }}>
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="splash-bloom absolute left-1/4 top-1/4 h-72 w-72 rounded-full bg-pink/15 blur-3xl" />
+        <div className="splash-bloom absolute right-1/5 bottom-1/4 h-64 w-64 rounded-full bg-lilac/15 blur-3xl" style={{ animationDelay: "0.4s" }} />
+        <div className="splash-bloom absolute right-1/4 top-1/3 h-40 w-40 rounded-full bg-gold/15 blur-3xl" style={{ animationDelay: "0.7s" }} />
+      </div>
+      <div className="relative z-10 text-center">
+        <p className="splash-logo script text-8xl text-paper sm:text-9xl">
+          Sm<span className="text-pink-hot glow-pink">♡</span>
+        </p>
+        <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs">
+          welcome to my world <span className="text-gold">✦</span>
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
+  const [splash, setSplash] = useState<"hidden" | "showing">("hidden");
+
+  useEffect(() => {
+    if (sessionStorage.getItem("sm-splash-seen")) return;
+    sessionStorage.setItem("sm-splash-seen", "1");
+    setSplash("showing");
+    const timer = window.setTimeout(() => setSplash("hidden"), 2650);
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <main className="page-wash min-h-screen pb-3 text-navy">
+      {splash === "showing" && <Splash />}
       <Nav />
       <Hero />
       <Work />
