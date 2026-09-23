@@ -28,12 +28,16 @@ export const Route = createFileRoute("/linktree")({
 
 type Tile = { label: string; icon: string; href: string; internal?: boolean; dot: string; note: string; download?: boolean };
 
+const EMAIL_SUBJECT = encodeURIComponent("Hi Shivani ♡");
+const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}&su=${EMAIL_SUBJECT}`;
+const outlookCompose = `https://outlook.office.com/mail/deeplink/compose?to=${contact.email}&subject=${EMAIL_SUBJECT}`;
+
 const tiles: Tile[] = [
   { label: "My Portfolio", icon: "▤", href: "/", internal: true, dot: "bg-pink", note: "The full experience" },
   { label: "My Resume", icon: "✎", href: RESUME_URL, dot: "bg-gold", note: "Experience & education", download: true },
   { label: "LinkedIn", icon: "in", href: "https://www.linkedin.com/in/shmerchant006", dot: "bg-sky", note: "/in/shmerchant006" },
   { label: "GitHub", icon: "</>", href: "https://github.com/merchShivani", dot: "bg-mint", note: "github.com/merchShivani" },
-  { label: "Email Me", icon: "✉", href: `mailto:${contact.email}`, dot: "bg-coral", note: contact.email },
+  { label: "Email Me", icon: "✉", href: "#email", dot: "bg-coral", note: contact.email },
 ];
 
 const marqueeWords = ["Product Innovation", "Design", "Technology", "Storytelling", "Human Experience", "Creativity"];
