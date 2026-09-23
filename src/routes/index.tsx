@@ -188,6 +188,53 @@ function Hero() {
 
 function FlipCard({ project, shot }: { project: (typeof projects)[number]; shot: string }) {
   const [flipped, setFlipped] = useState(false);
+  const hasLink = Boolean(project.url);
+  const card = (
+    <div className={`relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${flipped ? "[transform:rotateY(180deg)]" : ""}`}>
+      <div className="flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white [backface-visibility:hidden]">
+        <img src={shot} alt={project.title} width={944} height={704} loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover sm:h-32 sm:aspect-auto xl:h-24" />
+        <div className="flex flex-1 flex-col p-3.5">
+          <h3 className="text-sm font-bold text-navy">{project.title}</h3>
+          <p className="mt-2 text-xs leading-5 text-navy/60 sm:text-[10px] sm:leading-4">{project.made}</p>
+          <div className="mt-auto pt-3">
+            <div className="flex flex-wrap gap-1">
+              {project.tags.slice(0, 3).map((tag) => <span key={tag} className="rounded-md bg-lilac/50 px-2 py-1 text-[8px] font-bold text-navy/75">{tag}</span>)}
+            </div>
+            <p className="script mt-2 text-right text-sm text-coral">{hasLink ? "open the project ↗" : "flip for the story ↻"}</p>
+          </div>
+        </div>
+      </div>
+      <div className="absolute inset-0 flex flex-col rounded-xl bg-navy p-4 text-paper [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <p className="eyebrow text-[9px] text-gold">{project.kicker}</p>
+          <p className="mt-2 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">The problem — </span>{project.problem}</p>
+          <p className="mt-1.5 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">My approach — </span>{project.approach}</p>
+          <p className="mt-1.5 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">The outcome — </span>{project.outcome}</p>
+        </div>
+        <div className="mt-auto pt-2">
+          <div className="flex flex-wrap gap-1">
+            {project.tags.map((tag) => <span key={tag} className="rounded-md bg-paper/15 px-2 py-1 text-[8px] font-bold text-paper/85">{tag}</span>)}
+          </div>
+          <p className="script mt-2 text-right text-sm text-gold">{hasLink ? "click anywhere to open ↗" : "flip back ↻"}</p>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (hasLink) {
+    return (
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`${project.title} — open the project`}
+        className="group relative block h-full min-h-72 cursor-pointer select-none [perspective:1100px]"
+      >
+        {card}
+      </a>
+    );
+  }
+
   return (
     <div
       role="button"
@@ -203,35 +250,7 @@ function FlipCard({ project, shot }: { project: (typeof projects)[number]; shot:
       }}
       className="group relative h-full min-h-72 cursor-pointer select-none [perspective:1100px]"
     >
-      <div className={`relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${flipped ? "[transform:rotateY(180deg)]" : ""}`}>
-        <div className="flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white [backface-visibility:hidden]">
-          <img src={shot} alt={project.title} width={944} height={704} loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover sm:h-32 sm:aspect-auto xl:h-24" />
-          <div className="flex flex-1 flex-col p-3.5">
-            <h3 className="text-sm font-bold text-navy">{project.title}</h3>
-            <p className="mt-2 text-xs leading-5 text-navy/60 sm:text-[10px] sm:leading-4">{project.made}</p>
-            <div className="mt-auto pt-3">
-              <div className="flex flex-wrap gap-1">
-                {project.tags.slice(0, 3).map((tag) => <span key={tag} className="rounded-md bg-lilac/50 px-2 py-1 text-[8px] font-bold text-navy/75">{tag}</span>)}
-              </div>
-              <p className="script mt-2 text-right text-sm text-coral">flip for the story ↻</p>
-            </div>
-          </div>
-        </div>
-        <div className="absolute inset-0 flex flex-col rounded-xl bg-navy p-4 text-paper [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <p className="eyebrow text-[9px] text-gold">{project.kicker}</p>
-            <p className="mt-2 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">The problem — </span>{project.problem}</p>
-            <p className="mt-1.5 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">My approach — </span>{project.approach}</p>
-            <p className="mt-1.5 text-[10px] leading-4 text-paper/85"><span className="font-bold text-paper">The outcome — </span>{project.outcome}</p>
-          </div>
-          <div className="mt-auto pt-2">
-            <div className="flex flex-wrap gap-1">
-              {project.tags.map((tag) => <span key={tag} className="rounded-md bg-paper/15 px-2 py-1 text-[8px] font-bold text-paper/85">{tag}</span>)}
-            </div>
-            <p className="script mt-2 text-right text-sm text-gold">flip back ↻</p>
-          </div>
-        </div>
-      </div>
+      {card}
     </div>
   );
 }
