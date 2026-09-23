@@ -238,6 +238,41 @@
     0 0 36px oklch(0.78 0.15 76 / 0.32);
 }
 
+@keyframes splash-logo {
+  from { opacity: 0; transform: scale(0.9) rotate(-5deg); filter: blur(8px); }
+  to { opacity: 1; transform: scale(1) rotate(0deg); filter: blur(0); }
+}
+
+@keyframes splash-tagline {
+  from { opacity: 0; transform: translateY(12px); letter-spacing: 0.4em; }
+  to { opacity: 1; transform: translateY(0); letter-spacing: 0.22em; }
+}
+
+@keyframes splash-bloom {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes splash-fade {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@utility splash-logo {
+  animation: splash-logo 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+@utility splash-tagline {
+  animation: splash-tagline 0.7s ease-out 0.85s both;
+}
+
+@utility splash-bloom {
+  animation: splash-bloom 1.2s ease-out 0.15s both;
+}
+
+@utility splash-fade {
+  animation: splash-fade 0.7s ease-in forwards;
+}
+
 @utility glow-marquee {
   text-shadow:
     0 0 4px oklch(1 0 0 / 0.35),
