@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import lotusArt from "@/assets/lotus.png";
 import { Nav } from "@/components/portfolio/Nav";
 import { Reveal } from "@/components/Reveal";
 import portraitMobile from "@/assets/portrait-mobile.webp.asset.json";
@@ -326,7 +325,7 @@ function Splash() {
           <span className="splash-letter inline-block drop-shadow-[0_0_26px_oklch(0.71_0.16_358_/_0.55)]" style={{ animationDelay: "0.4s" }}>S</span>
           <span className="splash-letter inline-block drop-shadow-[0_0_26px_oklch(0.71_0.16_358_/_0.55)]" style={{ animationDelay: "1.6s" }}>M</span>
         </p>
-        <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs">
+        <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs" style={{ animationDelay: "2.9s" }}>
           welcome to my world <span className="text-gold">✦</span>
         </p>
       </div>
