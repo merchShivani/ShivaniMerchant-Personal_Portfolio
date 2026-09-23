@@ -28,21 +28,37 @@ export const Route = createFileRoute("/linktree")({
 
 type Tile = { label: string; icon: string; href: string; internal?: boolean; dot: string; note: string; download?: boolean };
 
+const EMAIL_SUBJECT = encodeURIComponent("Hi Shivani ♡");
+const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}&su=${EMAIL_SUBJECT}`;
+const outlookCompose = `https://outlook.office.com/mail/deeplink/compose?to=${contact.email}&subject=${EMAIL_SUBJECT}`;
+
 const tiles: Tile[] = [
   { label: "My Portfolio", icon: "▤", href: "/", internal: true, dot: "bg-pink", note: "The full experience" },
   { label: "My Resume", icon: "✎", href: RESUME_URL, dot: "bg-gold", note: "Experience & education", download: true },
   { label: "LinkedIn", icon: "in", href: "https://www.linkedin.com/in/shmerchant006", dot: "bg-sky", note: "/in/shmerchant006" },
   { label: "GitHub", icon: "</>", href: "https://github.com/merchShivani", dot: "bg-mint", note: "github.com/merchShivani" },
-  { label: "Email Me", icon: "✉", href: `mailto:${contact.email}`, dot: "bg-coral", note: contact.email },
+  { label: "Email Me", icon: "✉", href: "#email", dot: "bg-coral", note: contact.email },
 ];
 
 const marqueeWords = ["Product Innovation", "Design", "Technology", "Storytelling", "Human Experience", "Creativity"];
 const marqueeTrack = [...marqueeWords, ...marqueeWords, ...marqueeWords, ...marqueeWords];
 
+const emailChoices = [
+  { label: "Gmail", icon: "M", dot: "bg-pink", note: "Opens a new Gmail draft", href: gmailCompose },
+  { label: "Outlook", icon: "O", dot: "bg-sky", note: "Opens a new Outlook draft", href: outlookCompose },
+  { label: "Default mail app", icon: "✉", dot: "bg-gold", note: "Opens your phone's mail app", href: `mailto:${contact.email}` },
+];
+
 function LinktreePage() {
+  const [emailOpen, setEmailOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const handleEmailClick = () => {
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setEmailOpen(true);
+  };
+
+  const handleCopy = () => {
     navigator.clipboard?.writeText(contact.email).then(() => {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2500);
@@ -109,7 +125,7 @@ function LinktreePage() {
                 <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-bold text-navy md:h-11 md:w-11 ${tile.dot}`}>{tile.icon}</span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-base font-bold leading-tight md:text-lg">{tile.label}</span>
-                  <span className="mt-0.5 block truncate text-[11px] font-semibold text-navy/50 md:text-xs">{tile.label === "Email Me" && copied ? "Copied to clipboard ♡" : tile.note}</span>
+                  <span className="mt-0.5 block truncate text-[11px] font-semibold text-navy/50 md:text-xs">{tile.note}</span>
                 </span>
                 <span className="shrink-0 text-base text-navy/60 md:text-lg" aria-hidden>↗</span>
               </span>
@@ -119,7 +135,7 @@ function LinktreePage() {
                 {tile.internal ? (
                   <Link to="/">{inner}</Link>
                 ) : (
-                  <a href={tile.href} target={tile.href.startsWith("mailto:") ? undefined : "_blank"} rel="noreferrer" download={tile.download ? "Shivani-Merchant-Resume.pdf" : undefined} onClick={tile.label === "Email Me" ? handleEmailClick : undefined}>{inner}</a>
+                  <a href={tile.href} target={tile.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" download={tile.download ? "Shivani-Merchant-Resume.pdf" : undefined} onClick={tile.label === "Email Me" ? handleEmailClick : undefined}>{inner}</a>
                 )}
               </Reveal>
             );
@@ -133,6 +149,50 @@ function LinktreePage() {
           <p className="mt-2 text-[10px] text-paper/50">© {new Date().getFullYear()} Shivani Merchant · Find me everywhere ♡</p>
         </footer>
       </div>
+
+      {emailOpen && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center" role="dialog" aria-modal="true" aria-label="Choose how to email Shivani">
+          <button type="button" aria-label="Close" className="absolute inset-0 bg-navy/70 backdrop-blur-sm" onClick={() => setEmailOpen(false)} />
+          <div className="relative z-10 w-full max-w-sm rounded-t-3xl bg-paper p-5 text-navy shadow-2xl sm:rounded-3xl sm:p-6">
+            <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-navy/20 sm:hidden" aria-hidden />
+            <h2 className="display text-lg">Email me<span className="align-top text-sm text-coral">✦</span></h2>
+            <p className="mt-1 text-xs font-semibold text-navy/50">Pick where your draft opens — {contact.email}</p>
+            <div className="mt-3 space-y-2">
+              {emailChoices.map((choice) => (
+                <a
+                  key={choice.label}
+                  href={choice.href}
+                  target={choice.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noreferrer"
+                  onClick={() => setEmailOpen(false)}
+                  className="flex min-h-[56px] w-full items-center gap-3 rounded-2xl bg-white px-4 py-3 text-left shadow-[0_10px_26px_-20px_oklch(0.28_0.065_246)] transition-transform hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-bold text-navy ${choice.dot}`}>{choice.icon}</span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-base font-bold leading-tight">{choice.label}</span>
+                    <span className="mt-0.5 block text-[11px] font-semibold text-navy/50">{choice.note}</span>
+                  </span>
+                  <span className="shrink-0 text-navy/60" aria-hidden>↗</span>
+                </a>
+              ))}
+              <button
+                type="button"
+                onClick={handleCopy}
+                className="flex min-h-[56px] w-full items-center gap-3 rounded-2xl bg-navy px-4 py-3 text-left text-paper transition-transform hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-paper/15 text-base font-bold">{copied ? "♡" : "⧉"}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-base font-bold leading-tight">{copied ? "Copied to clipboard ♡" : "Copy my email address"}</span>
+                  <span className="mt-0.5 block text-[11px] font-semibold text-paper/60">{contact.email}</span>
+                </span>
+              </button>
+            </div>
+            <button type="button" onClick={() => setEmailOpen(false)} className="mt-3 w-full rounded-full py-2 text-xs font-bold uppercase tracking-widest text-navy/50 hover:text-navy">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
