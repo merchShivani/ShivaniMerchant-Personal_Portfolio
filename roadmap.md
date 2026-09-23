@@ -18,3 +18,4 @@
 - [x] Linktree: add pink glow border around all CTA tiles (stronger on My Portfolio)
 - [x] Homepage: add SM signature intro splash (plum overlay, 5s total: "SM" script letters write in one by one (S 0.4s, M 1.6s, fully popped by 3.5s) via splash-letter clip-path reveal, tagline at 2.9s, no icon, once per browser session
 - [x] Splash: heart → hand-fan → professional pink lotus with a soft glow and gentle sway through the whole intro — verified desktop + mobile, no console errors
+- [x] Splash: replace letter pop with a pencil-writing reveal — SM drawn stroke-by-stroke via SVG stroke-dashoffset animation (same Caveat script font as the Sm sign, no font change; S writes 0.3–1.9s, M 1.9–3.5s, ink fills in as each stroke completes, tagline at 3.4s, ~5s total) — verified desktop + mobile, no console errors
