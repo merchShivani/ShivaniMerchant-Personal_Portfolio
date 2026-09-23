@@ -81,7 +81,7 @@ function LinktreePage() {
       <div aria-hidden className="relative z-10 overflow-hidden border-b border-paper/10 py-2">
         <div className="marquee-track flex w-max items-center gap-6 whitespace-nowrap">
           {marqueeTrack.map((word, i) => (
-            <span key={i} className="eyebrow flex items-center gap-6 text-[10px] text-paper/60">
+            <span key={i} className="eyebrow glow-marquee flex items-center gap-6 text-[10px] font-bold text-paper/85">
               {word} <span className="text-pink-hot">✦</span>
             </span>
           ))}
@@ -111,7 +111,7 @@ function LinktreePage() {
           </Reveal>
           <Reveal delay={80}>
             <h1 className="display mt-4 text-3xl sm:text-4xl">Shivani Merchant<span className="align-top text-lg text-gold sm:text-xl">✦</span></h1>
-            <p className="eyebrow mt-2 text-[10px] text-pink-hot sm:text-xs">Product Innovation × Design × Technology × Storytelling</p>
+            <p className="eyebrow glow-pink mt-2 text-[10px] text-pink-hot sm:text-xs">Product Innovation × Design × Technology × Storytelling</p>
             <p className="mx-auto mt-2 max-w-xs text-sm leading-6 text-paper/70 sm:text-base">
               I build creative solutions with technology, a curious mind, and a heart for people.
             </p>

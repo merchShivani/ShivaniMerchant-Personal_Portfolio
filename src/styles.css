@@ -224,6 +224,20 @@
   font-weight: 600;
 }
 
+@utility glow-pink {
+  text-shadow:
+    0 0 6px oklch(0.71 0.16 358 / 0.6),
+    0 0 18px oklch(0.71 0.16 358 / 0.45),
+    0 0 36px oklch(0.71 0.16 358 / 0.3);
+}
+
+@utility glow-marquee {
+  text-shadow:
+    0 0 4px oklch(1 0 0 / 0.35),
+    0 0 14px oklch(0.71 0.16 358 / 0.65),
+    0 0 30px oklch(0.71 0.16 358 / 0.4);
+}
+
 @utility portfolio-grid {
   display: grid;
   width: min(100% - 1.5rem, 1560px);
