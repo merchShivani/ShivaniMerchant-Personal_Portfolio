@@ -100,12 +100,6 @@ const interests = [
   { label: "Exploration", icon: "✦" },
 ];
 
-const deskNotes = [
-  { label: "about me", icon: "♡", href: "#about", tone: "bg-butter/80", rotate: "-rotate-3" },
-  { label: "my toolkit", icon: "✎", href: "#skills", tone: "bg-sky/80", rotate: "rotate-2" },
-  { label: "say hi", icon: "✦", href: "#contact", tone: "bg-pink/80", rotate: "-rotate-2" },
-];
-
 function Hero() {
   return (
     <section id="top" className="pt-20 md:pt-24">
@@ -137,15 +131,6 @@ function Hero() {
               <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap">
                 <a href="#work" className="inline-flex min-h-11 items-center justify-center rounded-full bg-navy px-6 py-3 text-center text-xs font-bold text-paper transition-transform hover:-translate-y-0.5">Explore My Work →</a>
                 <a href="#contact" className="inline-flex min-h-11 items-center justify-center rounded-full border border-navy/20 bg-white px-6 py-3 text-center text-xs font-bold text-navy transition-colors hover:bg-pink/40">Let’s Talk ✦</a>
-              </div>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <span className="script text-lg leading-none text-navy/50">my desk →</span>
-                {deskNotes.map((note) => (
-                  <a key={note.href} href={note.href} className={`relative inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-[11px] font-bold text-navy shadow-sm transition-transform hover:-translate-y-1 hover:rotate-0 ${note.tone} ${note.rotate}`}>
-                    <span aria-hidden className="absolute -top-1.5 left-1/2 h-3.5 w-8 -translate-x-1/2 -rotate-3 rounded-[2px] bg-gold/45" />
-                    <span aria-hidden>{note.icon}</span> {note.label}
-                  </a>
-                ))}
               </div>
             </div>
             <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[420px] lg:pt-0">
