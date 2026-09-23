@@ -254,11 +254,13 @@
 }
 
 @keyframes splash-fan {
-  0% { opacity: 0; transform: rotate(-6deg) scale(0.55); filter: blur(6px); }
-  18% { opacity: 1; transform: rotate(10deg) scale(1); filter: blur(0); }
-  38% { transform: rotate(-16deg) scale(1); }
-  58% { transform: rotate(14deg) scale(1); }
-  78% { transform: rotate(-12deg) scale(1); }
+  0% { opacity: 0; transform: rotate(-10deg) scale(0.55); filter: blur(6px); }
+  12% { opacity: 1; transform: rotate(8deg) scale(1); filter: blur(0); }
+  28% { transform: rotate(-18deg) scale(1); }
+  44% { transform: rotate(16deg) scale(1); }
+  60% { transform: rotate(-16deg) scale(1); }
+  76% { transform: rotate(14deg) scale(1); }
+  90% { transform: rotate(-8deg) scale(1); }
   100% { opacity: 1; transform: rotate(0deg) scale(1); }
 }
 
@@ -279,7 +281,7 @@
 }
 
 @utility splash-fan {
-  animation: splash-fan 2.4s ease-in-out 0.15s both;
+  animation: splash-fan 2.8s ease-in-out 0.15s both;
   transform-origin: 85% 90%;
 }
 
