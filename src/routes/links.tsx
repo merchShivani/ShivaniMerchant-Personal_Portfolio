@@ -103,7 +103,7 @@ function LinksPage() {
                 {link.internal ? (
                   <Link to="/">{inner}</Link>
                 ) : (
-                  <a href={link.href} target={link.href.startsWith("mailto:") ? undefined : "_blank"} rel="noreferrer">{inner}</a>
+                  <a href={link.href} target={link.href.startsWith("mailto:") ? undefined : "_blank"} rel="noreferrer" download={link.download ? "Shivani-Merchant-Resume.pdf" : undefined}>{inner}</a>
                 )}
               </Reveal>
             );
