@@ -315,16 +315,16 @@ function Contact() {
 
 function Splash() {
   return (
-    <div aria-hidden className="splash-fade fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-[oklch(0.25_0.07_318)]" style={{ animationDelay: "2.3s" }}>
+    <div aria-hidden className="splash-fade fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-[oklch(0.25_0.07_318)]" style={{ animationDelay: "4.3s" }}>
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="splash-bloom absolute left-1/4 top-1/4 h-72 w-72 rounded-full bg-pink/15 blur-3xl" />
         <div className="splash-bloom absolute right-1/5 bottom-1/4 h-64 w-64 rounded-full bg-lilac/15 blur-3xl" style={{ animationDelay: "0.4s" }} />
         <div className="splash-bloom absolute right-1/4 top-1/3 h-40 w-40 rounded-full bg-gold/15 blur-3xl" style={{ animationDelay: "0.7s" }} />
       </div>
       <div className="relative z-10 text-center">
-        <p className="splash-logo script inline-flex items-center gap-3 text-8xl text-paper sm:text-9xl">
-          Sm
-          <img src={lotusArt} alt="" loading="eager" width={1024} height={1024} className="splash-lotus inline-block h-[1.35em] w-auto align-middle drop-shadow-[0_0_26px_oklch(0.71_0.16_358_/_0.55)]" />
+        <p aria-label="SM" className="script inline-flex items-center text-8xl text-paper sm:text-9xl">
+          <span className="splash-letter inline-block drop-shadow-[0_0_26px_oklch(0.71_0.16_358_/_0.55)]" style={{ animationDelay: "0.4s" }}>S</span>
+          <span className="splash-letter inline-block drop-shadow-[0_0_26px_oklch(0.71_0.16_358_/_0.55)]" style={{ animationDelay: "1.6s" }}>M</span>
         </p>
         <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs">
           welcome to my world <span className="text-gold">✦</span>
@@ -341,7 +341,7 @@ function Index() {
     if (sessionStorage.getItem("sm-splash-seen")) return;
     sessionStorage.setItem("sm-splash-seen", "1");
     setSplash("showing");
-    const timer = window.setTimeout(() => setSplash("hidden"), 3000);
+    const timer = window.setTimeout(() => setSplash("hidden"), 5000);
     return () => window.clearTimeout(timer);
   }, []);
 
