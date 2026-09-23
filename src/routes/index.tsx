@@ -351,7 +351,7 @@ function Splash() {
             M
           </text>
         </svg>
-        <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs" style={{ animationDelay: "2.9s" }}>
+        <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs" style={{ animationDelay: "3.4s" }}>
           welcome to my world <span className="text-gold">✦</span>
         </p>
       </div>
