@@ -121,7 +121,7 @@ function LinktreePage() {
         <nav aria-label="My links" className="mt-4 space-y-2">
           {tiles.map((tile, i) => {
             const inner = (
-              <span className={`flex min-h-[56px] w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-navy transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:px-5 md:min-h-[56px] md:gap-4 ${tile.primary ? "bg-coral shadow-[0_0_44px_-12px_rgba(255,138,122,0.55)]" : "bg-paper/95 shadow-[0_14px_34px_-24px_oklch(1_0_0)]"}`}>
+              <span className={`flex min-h-[56px] w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-navy transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:px-5 md:min-h-[56px] md:gap-4 ${tile.primary ? "bg-pink-hot shadow-[0_0_44px_-12px_rgba(236,72,153,0.55)]" : "bg-paper/95 shadow-[0_14px_34px_-24px_oklch(1_0_0)]"}`}>
                 <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-bold text-navy md:h-11 md:w-11 ${tile.dot}`}>{tile.icon}</span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-base font-bold leading-tight md:text-lg">{tile.label}</span>
