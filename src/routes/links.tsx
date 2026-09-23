@@ -52,7 +52,7 @@ function LinksPage() {
         <div className="absolute right-12 bottom-40 text-sm text-coral/50">✦</div>
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-md flex-col px-5 pb-10 pt-10">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-md flex-col px-5 pb-10 pt-10 md:justify-center">
         <header className="text-center">
           <a href="/" className="script text-3xl text-navy" aria-label="Shivani Merchant home">Sm<span className="align-top text-sm text-coral">♡</span></a>
           <Reveal>
@@ -112,7 +112,8 @@ function LinksPage() {
         <footer className="mt-10 text-center">
           <picture>
             <source media="(min-width: 768px)" srcSet={blossomDesktop.url} type="image/webp" />
-            <img src={blossomMobile.url} alt="" width={480} height={800} loading="lazy" decoding="async" className="mx-auto h-24 w-auto rounded-xl object-cover opacity-80" />
+            <img src={blossomMobile.url} alt="" width={480} height={800} loading="lazy" decoding="async" className="mx-auto h-20 w-36 rounded-xl object-cover object-[center_35%] opacity-80" />
+
           </picture>
           <p className="mt-4 text-[10px] text-navy/60">© {new Date().getFullYear()} Shivani Merchant · Built with a lot of ♡</p>
         </footer>
