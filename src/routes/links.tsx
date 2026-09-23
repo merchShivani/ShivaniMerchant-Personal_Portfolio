@@ -28,7 +28,10 @@ export const Route = createFileRoute("/links")({
   component: LinksPage,
 });
 
-const links = [
+type LinkItem = { label: string; icon: string; href: string; internal: boolean; tone: string; note: string; download?: boolean };
+
+const links: LinkItem[] = [
+
   { label: "View My Portfolio", icon: "▤", href: "/", internal: true, tone: "bg-navy text-paper", note: "The full experience ✦" },
   { label: "View My Resume", icon: "✎", href: RESUME_URL, internal: false, tone: "bg-white text-navy", note: "Experience & education", download: true },
   { label: "LinkedIn", icon: "in", href: "https://www.linkedin.com/in/shmerchant006", internal: false, tone: "bg-pink/70 text-navy", note: "/in/shmerchant006" },
