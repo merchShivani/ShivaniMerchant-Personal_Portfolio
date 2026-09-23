@@ -12,3 +12,4 @@
 - [x] Add a /links digital business card page (mobile-first, matching portfolio identity)
 - [x] Attach uploaded resume PDF to the /links resume button (CDN-hosted, downloads as Shivani-Merchant-Resume.pdf)
 
+- [x] /links: removed blossom strip, compacted to fit one screen without scrolling (mobile single-column, desktop side-by-side) — verified 390×844, 855×606, 1280×800, no console errors
