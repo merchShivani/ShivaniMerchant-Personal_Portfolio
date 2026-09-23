@@ -253,6 +253,15 @@
   to { opacity: 1; transform: scale(1); }
 }
 
+@keyframes splash-fan {
+  0% { opacity: 0; transform: rotate(-6deg) scale(0.55); filter: blur(6px); }
+  18% { opacity: 1; transform: rotate(10deg) scale(1); filter: blur(0); }
+  38% { transform: rotate(-16deg) scale(1); }
+  58% { transform: rotate(14deg) scale(1); }
+  78% { transform: rotate(-12deg) scale(1); }
+  100% { opacity: 1; transform: rotate(0deg) scale(1); }
+}
+
 @keyframes splash-fade {
   to { opacity: 0; visibility: hidden; }
 }
