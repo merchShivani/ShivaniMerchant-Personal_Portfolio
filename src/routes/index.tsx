@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/portfolio/Nav";
-import portrait from "@/assets/shivani-crimson-editorial.png";
+import portrait from "@/assets/shivani-crimson-cutout.png";
 import landscape from "@/assets/watercolor-landscape.jpg";
 import blossom from "@/assets/blossom-panel.jpg";
 import desk from "@/assets/editorial-desk.jpg";
@@ -67,7 +67,7 @@ function Hero() {
           <div className="absolute left-[8%] top-[2%] aspect-square w-[75%] rounded-full bg-crimson" />
           <img src={landscape} alt="" aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[46%] w-full object-cover object-bottom opacity-55 mix-blend-multiply" />
           <img src={blossom} alt="" aria-hidden="true" className="absolute right-0 top-4 h-64 w-48 object-cover opacity-80 mix-blend-multiply" />
-          <img src={portrait} alt="Shivani Merchant seated and looking over her shoulder" width={1200} height={1500} className="absolute bottom-0 left-[2%] z-10 h-[93%] w-[94%] object-cover object-top mix-blend-multiply" />
+          <img src={portrait} alt="Shivani Merchant seated and looking over her shoulder" width={1200} height={1500} className="absolute bottom-0 left-[2%] z-10 h-[93%] w-[94%] object-contain object-bottom" />
           <p className="script absolute right-1 top-0 z-20 text-5xl text-crimson">SM</p>
         </div>
       </div>
