@@ -81,7 +81,7 @@ function LinktreePage() {
       <div aria-hidden className="relative z-10 overflow-hidden border-b border-paper/10 py-2">
         <div className="marquee-track flex w-max items-center gap-6 whitespace-nowrap">
           {marqueeTrack.map((word, i) => (
-            <span key={i} className="eyebrow flex items-center gap-6 text-[10px] text-paper/60">
+            <span key={i} className="eyebrow glow-marquee flex items-center gap-6 text-[10px] font-bold text-paper/85">
               {word} <span className="text-pink-hot">✦</span>
             </span>
           ))}
