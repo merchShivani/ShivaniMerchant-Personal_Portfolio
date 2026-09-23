@@ -7,5 +7,5 @@
 - [ ] Later: Linktree-style page (user will request)
 
 ## Open
-- [ ] Headline font: show new font prototypes (italic serif / elegant serif / rounded); user rejected first batch
-- [ ] Background: user wants more colorful — add multi-color pastel washes/panels
+- [x] Replace the previous layout with the cream-and-crimson editorial reference composition
+- [x] Restyle Shivani's portrait into the seated, over-the-shoulder reference pose
