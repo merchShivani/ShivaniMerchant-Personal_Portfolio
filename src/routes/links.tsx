@@ -2,8 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import portraitMobile from "@/assets/portrait-mobile.webp.asset.json";
 import portraitDesktop from "@/assets/portrait-desktop.webp.asset.json";
-import blossomMobile from "@/assets/blossom-mobile.webp.asset.json";
-import blossomDesktop from "@/assets/blossom-desktop.webp.asset.json";
 import { contact } from "@/data/portfolio";
 import resumeAsset from "@/assets/resume.pdf.asset.json";
 
@@ -41,7 +39,7 @@ const links: LinkItem[] = [
 
 function LinksPage() {
   return (
-    <main className="page-wash min-h-screen text-navy">
+    <main className="page-wash min-h-dvh overflow-hidden text-navy">
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 bg-gradient-to-br from-pink/25 via-peach/30 to-lilac/30"
@@ -62,14 +60,14 @@ function LinksPage() {
         <div className="absolute left-10 top-1/2 text-lg text-peach/80">✿</div>
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-xl flex-col justify-center px-6 py-12 sm:px-8">
-        <header className="text-center">
+      <div className="relative z-10 mx-auto grid min-h-dvh w-full max-w-xl grid-cols-1 content-center justify-items-center px-5 py-6 sm:px-8 md:max-w-5xl md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center md:gap-10 lg:gap-16 lg:px-12">
+        <header className="flex flex-col items-center text-center md:items-start md:text-left">
           <a href="/" className="script text-3xl text-navy" aria-label="Shivani Merchant home">Sm<span className="align-top text-sm text-coral">♡</span></a>
           <Reveal>
-            <div className="relative mx-auto mt-6 w-44 sm:w-52">
-              <div className="absolute left-0 top-3 h-16 w-16 rounded-full bg-lilac/70" />
-              <div className="absolute right-0 top-0 h-12 w-12 rounded-full bg-butter/70" />
-              <div className="absolute -bottom-1 left-6 h-14 w-14 rounded-full bg-pink/60" />
+            <div className="relative mx-auto mt-3 w-32 sm:w-36 md:mt-5 md:w-44 lg:w-52">
+              <div className="absolute left-0 top-3 h-14 w-14 rounded-full bg-lilac/70 md:h-16 md:w-16" />
+              <div className="absolute right-0 top-0 h-10 w-10 rounded-full bg-butter/70 md:h-12 md:w-12" />
+              <div className="absolute -bottom-1 left-5 h-12 w-12 rounded-full bg-pink/60 md:left-6 md:h-14 md:w-14" />
               <picture>
                 <source media="(min-width: 768px)" srcSet={portraitDesktop.url} type="image/webp" />
                 <img
@@ -83,50 +81,47 @@ function LinksPage() {
                   className="relative z-10 w-full rotate-[-3deg] rounded-2xl drop-shadow-2xl"
                 />
               </picture>
-              <p className="script absolute -right-4 -top-3 z-20 rotate-6 text-xl text-coral">hello ✦</p>
+              <p className="script absolute -right-3 -top-2 z-20 rotate-6 text-lg text-coral md:-right-4 md:-top-3 md:text-xl">hello ✦</p>
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="display mt-6 text-4xl sm:text-5xl">Shivani Merchant<span className="align-top text-xl sm:text-2xl text-gold">✦</span></h1>
-            <p className="eyebrow mt-3 text-xs sm:text-sm text-coral">Product Innovation × Design × Technology × Storytelling</p>
-            <p className="mx-auto mt-3 max-w-sm text-base sm:text-lg leading-7 text-navy/70">
+            <h1 className="display mt-3 text-3xl sm:text-4xl md:mt-5 lg:text-5xl">Shivani Merchant<span className="align-top text-lg text-gold sm:text-xl lg:text-2xl">✦</span></h1>
+            <p className="eyebrow mt-2 text-[11px] sm:text-xs text-coral md:text-sm">Product Innovation × Design × Technology × Storytelling</p>
+            <p className="mx-auto mt-2 max-w-xs text-sm leading-6 text-navy/70 sm:text-base md:mx-0 md:mt-3 lg:text-lg">
               I build creative solutions with technology, a curious mind, and a heart for people.
             </p>
           </Reveal>
         </header>
 
-        <nav aria-label="My links" className="mt-8 space-y-3">
-          {links.map((link, i) => {
-            const inner = (
-              <span className={`flex min-h-[72px] w-full items-center gap-4 rounded-2xl border border-navy/10 px-6 py-5 text-left shadow-[0_10px_30px_-22px_color-mix(in_oklch,var(--navy)_55%,transparent)] transition-transform hover:-translate-y-0.5 active:translate-y-0 ${link.tone}`}>
-                <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-lg font-bold ${link.tone.includes("text-paper") ? "bg-paper/15" : "bg-navy/5"}`}>{link.icon}</span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-lg font-bold leading-tight">{link.label}</span>
-                  <span className={`mt-1 block truncate text-xs font-semibold ${link.tone.includes("text-paper") ? "text-paper/60" : "text-navy/50"}`}>{link.note}</span>
+        <div className="w-full">
+          <nav aria-label="My links" className="mt-6 w-full space-y-2.5 md:mt-0 md:space-y-3">
+            {links.map((link, i) => {
+              const inner = (
+                <span className={`flex min-h-[56px] w-full items-center gap-3 rounded-2xl border border-navy/10 px-4 py-3 text-left shadow-[0_10px_30px_-22px_color-mix(in_oklch,var(--navy)_55%,transparent)] transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:px-5 md:min-h-[64px] md:gap-4 md:px-6 md:py-4 ${link.tone}`}>
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-bold md:h-12 md:w-12 md:text-lg ${link.tone.includes("text-paper") ? "bg-paper/15" : "bg-navy/5"}`}>{link.icon}</span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-base font-bold leading-tight md:text-lg">{link.label}</span>
+                    <span className={`mt-0.5 block truncate text-[11px] font-semibold md:mt-1 md:text-xs ${link.tone.includes("text-paper") ? "text-paper/60" : "text-navy/50"}`}>{link.note}</span>
+                  </span>
+                  <span className="shrink-0 text-base md:text-lg" aria-hidden>↗</span>
                 </span>
-                <span className="shrink-0 text-lg" aria-hidden>↗</span>
-              </span>
-            );
-            return (
-              <Reveal key={link.label} delay={i * 60}>
-                {link.internal ? (
-                  <Link to="/">{inner}</Link>
-                ) : (
-                  <a href={link.href} target={link.href.startsWith("mailto:") ? undefined : "_blank"} rel="noreferrer" download={link.download ? "Shivani-Merchant-Resume.pdf" : undefined}>{inner}</a>
-                )}
-              </Reveal>
-            );
-          })}
-        </nav>
+              );
+              return (
+                <Reveal key={link.label} delay={i * 60}>
+                  {link.internal ? (
+                    <Link to="/">{inner}</Link>
+                  ) : (
+                    <a href={link.href} target={link.href.startsWith("mailto:") ? undefined : "_blank"} rel="noreferrer" download={link.download ? "Shivani-Merchant-Resume.pdf" : undefined}>{inner}</a>
+                  )}
+                </Reveal>
+              );
+            })}
+          </nav>
 
-        <footer className="mt-10 text-center">
-          <picture>
-            <source media="(min-width: 768px)" srcSet={blossomDesktop.url} type="image/webp" />
-            <img src={blossomMobile.url} alt="" width={480} height={800} loading="lazy" decoding="async" className="mx-auto h-20 w-36 rounded-xl object-cover object-[center_35%] opacity-80" />
-
-          </picture>
-          <p className="mt-4 text-[10px] text-navy/60">© {new Date().getFullYear()} Shivani Merchant · Built with a lot of ♡</p>
-        </footer>
+          <footer className="mt-5 text-center md:mt-6 md:text-left">
+            <p className="text-[10px] text-navy/60">© {new Date().getFullYear()} Shivani Merchant · Built with a lot of ♡</p>
+          </footer>
+        </div>
       </div>
     </main>
   );
