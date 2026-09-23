@@ -16,4 +16,4 @@
 - [x] Add a brand-new second linktree page at /linktree (navy cinematic direction, marquee strip, cream pill buttons) + "Linktree ✦" entries in desktop nav, mobile menu, and footer — verified fits one screen at 390×844 and 1280×800, nav click works, no console errors
 - [x] Recolor the /linktree "My Portfolio" button as the primary CTA (vibrant pink with soft glow on plum bg, white icon dot; other tiles stay cream) — verified desktop + mobile, no console errors
 - [x] Linktree: add pink glow border around all CTA tiles (stronger on My Portfolio)
-- [x] Homepage: add SM signature intro splash (navy overlay, ~2.6s, once per browser session)
+- [x] Homepage: add SM signature intro splash (plum overlay matching /linktree, ~3s, once per browser session)
