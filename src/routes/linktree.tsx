@@ -26,7 +26,7 @@ export const Route = createFileRoute("/linktree")({
   component: LinktreePage,
 });
 
-type Tile = { label: string; icon: string; href: string; internal?: boolean; dot: string; note: string; download?: boolean };
+type Tile = { label: string; icon: string; href: string; internal?: boolean; dot: string; note: string; download?: boolean; primary?: boolean };
 
 const EMAIL_SUBJECT = encodeURIComponent("Hi Shivani ♡");
 const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}&su=${EMAIL_SUBJECT}`;
