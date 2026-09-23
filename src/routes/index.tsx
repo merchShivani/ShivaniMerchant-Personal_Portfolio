@@ -63,12 +63,14 @@ function Hero() {
             <a href="#about" className="text-[10px] font-bold uppercase text-ink">About me <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-ink">›</span></a>
           </div>
         </div>
-        <div className="relative min-h-[610px] self-end">
-          <div className="absolute left-[8%] top-[2%] aspect-square w-[75%] rounded-full bg-crimson" />
-          <img src={landscape} alt="" aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[46%] w-full object-cover object-bottom opacity-55 mix-blend-multiply" />
-          <img src={blossom} alt="" aria-hidden="true" className="absolute right-0 top-4 h-64 w-48 object-cover opacity-80 mix-blend-multiply" />
-          <img src={portrait} alt="Shivani Merchant seated and looking over her shoulder" width={1200} height={1500} className="absolute bottom-0 left-[2%] z-10 h-[93%] w-[94%] object-contain object-bottom" />
-          <p className="script absolute right-1 top-0 z-20 text-5xl text-crimson">SM</p>
+        <div className="relative min-h-[520px] self-end md:min-h-[650px]">
+          <div className="absolute left-1/2 top-[4%] aspect-square w-[82%] max-w-[510px] -translate-x-1/2 overflow-hidden rounded-full bg-crimson">
+            <img src={blossom} alt="" aria-hidden="true" className="absolute -right-[8%] -top-[5%] h-[66%] w-[58%] rotate-3 object-cover object-[72%_18%] opacity-95 mix-blend-screen" />
+            <img src={blossom} alt="" aria-hidden="true" className="absolute -bottom-[8%] -left-[18%] h-[52%] w-[57%] -rotate-12 object-cover object-[35%_70%] opacity-60 mix-blend-screen" />
+          </div>
+          <img src={landscape} alt="" aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[38%] w-full object-cover object-bottom opacity-45 mix-blend-multiply" />
+          <img src={portrait} alt="Shivani Merchant seated and looking over her shoulder" width={1200} height={1500} className="absolute bottom-0 left-1/2 z-10 h-[94%] w-[88%] -translate-x-1/2 object-contain object-bottom drop-shadow-[0_18px_16px_color-mix(in_oklch,var(--ink)_18%,transparent)] md:h-[96%] md:w-[90%]" />
+          <p className="script absolute right-[4%] top-[2%] z-20 text-5xl text-crimson">SM</p>
         </div>
       </div>
     </section>
