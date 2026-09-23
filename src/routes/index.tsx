@@ -1,31 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/portfolio/Nav";
-import { Reveal } from "@/components/Reveal";
-import portrait from "@/assets/shivani-editorial-portrait.png";
+import portrait from "@/assets/shivani-crimson-editorial.png";
 import landscape from "@/assets/watercolor-landscape.jpg";
 import blossom from "@/assets/blossom-panel.jpg";
-import moodboard from "@/assets/moodboard.jpg";
+import desk from "@/assets/editorial-desk.jpg";
+import filmstrip from "@/assets/interests-filmstrip.jpg";
 import proj1 from "@/assets/proj-1.jpg";
 import proj2 from "@/assets/proj-2.jpg";
 import proj3 from "@/assets/proj-3.jpg";
 import proj4 from "@/assets/proj-4.jpg";
-import {
-  NOTION_URL,
-  awards,
-  contact,
-  education,
-  experience,
-  leadership,
-  projects,
-} from "@/data/portfolio";
+import { NOTION_URL, contact, education, experience, projects } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Shivani Merchant — Product, Design & Creative Technology" },
-      { name: "description", content: "Shivani Merchant's portfolio of product innovation, UX design, creative technology and human-centered storytelling." },
-      { property: "og:title", content: "Shivani Merchant — Product, Design & Creative Technology" },
-      { property: "og:description", content: "Creative solutions where technology, product thinking and human stories meet." },
+      { title: "Shivani Merchant — Product Thinker & Multidisciplinary Creative" },
+      { name: "description", content: "Shivani Merchant designs products, experiences and stories at the intersection of technology, people and creativity." },
+      { property: "og:title", content: "Shivani Merchant — Product Thinker & Multidisciplinary Creative" },
+      { property: "og:description", content: "Designing products people remember, with curiosity." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -33,261 +25,116 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const projectShots = [proj1, proj2, proj3, proj4];
-
-const toolkit = [
-  { title: "Languages", icon: "</>", tone: "bg-butter/60", items: ["JavaScript", "HTML", "CSS", "SQL"] },
-  { title: "Frameworks & Libraries", icon: "▤", tone: "bg-lilac/60", items: ["ReactJS", "Node.js", "Figma API"] },
-  { title: "Tools & Platforms", icon: "☁", tone: "bg-sky/60", items: ["Git", "GitHub", "Notion", "Tableau"] },
-  { title: "Design & Creative", icon: "✎", tone: "bg-pink/60", items: ["Figma", "Canva", "Adobe Creative Suite"] },
-  { title: "Human Skills", icon: "♡", tone: "bg-mint/60", items: ["Communication", "Teamwork", "Problem Solving", "Collaboration"] },
+const projectImages = [proj1, proj2, proj3, proj4, desk];
+const projectCards = [
+  ...projects,
+  {
+    index: "05",
+    title: "Digital Campaign Systems",
+    kicker: "Nexstar Media Group",
+    made: "Scalable digital campaign systems and interactive HTML5 experiences.",
+    tags: ["Creative Direction", "Digital Design"],
+  },
 ];
 
-const values = [
-  { label: "Curious", icon: "♡", tone: "bg-pink/60" },
-  { label: "Creative", icon: "✎", tone: "bg-butter/60" },
-  { label: "Driven", icon: "➚", tone: "bg-lilac/60" },
-  { label: "Always Learning", icon: "▤", tone: "bg-mint/60" },
-  { label: "People First", icon: "✦", tone: "bg-sky/60" },
+const capabilities = [
+  ["◉", "Product Thinking"], ["⌕", "Research & Strategy"],
+  ["⌘", "Human-Centered Design"], ["✣", "AI Experimentation"],
+  ["▣", "UI/UX Design"], ["✦", "Creative Direction"],
+  ["▷", "Visual Storytelling"], ["◎", "Cross-Cultural Perspective"],
 ];
 
-const interests = [
-  { label: "Movies & TV Shows", icon: "☺" },
-  { label: "Travel", icon: "✈" },
-  { label: "Foodie", icon: "☕" },
-  { label: "Photography", icon: "◎" },
-  { label: "Music", icon: "♫" },
-  { label: "Fashion", icon: "✿" },
-  { label: "Chinese Culture", icon: "灯" },
-  { label: "Exploration", icon: "✦" },
-];
+const personalLabels = ["Film & Visual Storytelling", "Travel & Culture", "Languages & Learning", "Media & Dramas", "Creative Experimentation"];
 
 function Hero() {
   return (
-    <section id="top" className="pt-20 md:pt-24">
-      <div className="portfolio-grid">
-        <div className="card-soft relative overflow-hidden px-5 py-8 md:col-span-6 md:px-9 md:py-10">
-          <div className="grid min-h-[440px] items-center gap-5 lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="relative z-10">
-              <h1 className="display text-[clamp(2.6rem,4.3vw,4.2rem)] text-navy">
-                Hi, I’m<br />Shivani<span className="align-top text-2xl text-gold">✦</span>
-              </h1>
-              <p className="mt-5 max-w-sm text-sm leading-6 text-navy/70">
-                I build creative solutions with technology, a curious mind, and a heart for people.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {["Developer", "Designer", "Problem Solver", "Creator", "Collaborator", "Lifelong Learner"].map((item, i) => (
-                  <span key={item} className={`rounded-full px-3.5 py-2 text-[11px] font-semibold text-navy ${["bg-butter/70", "bg-pink/70", "bg-mint/70", "bg-lilac/70", "bg-sky/70", "bg-peach/70"][i]}`}>{item}</span>
-                ))}
-              </div>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <a href="#work" className="rounded-full bg-navy px-6 py-3.5 text-xs font-bold text-paper transition-transform hover:-translate-y-0.5">Explore My Work →</a>
-                <a href="#contact" className="rounded-full border border-navy/20 bg-white px-6 py-3.5 text-xs font-bold text-navy transition-colors hover:bg-pink/40">Let’s Talk ✦</a>
-              </div>
-            </div>
-            <div className="relative mx-auto w-full max-w-[420px] pt-10 lg:pt-0">
-              <div className="absolute left-2 top-[24%] h-32 w-32 rounded-full bg-lilac/70" />
-              <div className="absolute right-6 top-[8%] h-24 w-24 rounded-full bg-butter/70" />
-              <div className="absolute -bottom-2 left-12 h-28 w-28 rounded-full bg-pink/60" />
-              <img src={portrait} alt="Shivani Merchant portrait" width={1024} height={1280} className="relative z-10 w-full rotate-[-3deg] drop-shadow-2xl" />
-              <p className="script absolute -left-2 top-2 z-20 -rotate-6 text-xl text-navy">Big dreams,<br />Good code. ↗</p>
-              <p className="script absolute -right-1 top-28 z-20 rotate-3 text-xl text-navy">Always<br />curious ♡</p>
-              <p className="script absolute bottom-10 -left-1 z-20 -rotate-3 text-xl text-navy">Let’s build<br />something ↘</p>
-            </div>
+    <section id="top" className="editorial-shell relative min-h-[735px] overflow-hidden pt-24 md:pt-28">
+      <img src={blossom} alt="" aria-hidden="true" className="pointer-events-none absolute -left-24 top-14 h-60 w-72 rotate-12 object-cover opacity-65 mix-blend-multiply" />
+      <div className="relative z-10 grid items-start gap-8 md:grid-cols-[1.02fr_0.98fr]">
+        <div className="pt-5 md:pl-16 md:pt-10">
+          <p className="text-[11px] font-bold uppercase text-ink/70">Technology × Design × People × Storytelling</p>
+          <h1 className="display mt-4 max-w-[650px] text-[clamp(3.9rem,7.2vw,7.4rem)] uppercase text-ink">
+            Designing<br /><span className="text-crimson">Products</span><br /><span className="text-crimson">People</span><br />Remember.
+          </h1>
+          <p className="script -mt-1 ml-16 text-[clamp(2.5rem,4vw,4.5rem)] leading-none text-crimson">with curiosity</p>
+          <p className="mt-6 max-w-[560px] text-sm leading-6 text-ink/75">I’m Shivani — a product innovator and multidisciplinary designer exploring how technology, design, human behavior, and storytelling come together to create meaningful experiences.</p>
+          <div className="mt-6 flex flex-wrap items-center gap-5">
+            <a href="#work" className="rounded-full bg-crimson px-7 py-4 text-[10px] font-bold uppercase text-paper">View my work <span className="ml-4">→</span></a>
+            <a href="#about" className="text-[10px] font-bold uppercase text-ink">About me <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-ink">›</span></a>
           </div>
-          <img src={landscape} alt="Watercolor mountains and pagoda" width={1920} height={640} className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-24 w-full object-cover object-bottom opacity-55" />
         </div>
-
-        <div id="about" className="card-soft relative overflow-hidden px-6 py-8 md:col-span-3">
-          <h2 className="display text-2xl text-navy">A little about me <span className="text-coral">✿</span></h2>
-          <p className="mt-5 text-sm leading-6 text-navy/70">
-            I’m a product innovator and creative technologist who loves turning complex ideas into clear, human experiences — combining creativity, technology and problem-solving.
-          </p>
-          <div className="mt-6 space-y-3 text-xs text-navy/70">
-            <p><span className="font-bold text-navy">◎ Based in</span> &nbsp;{contact.location}</p>
-            <p><span className="font-bold text-navy">▤ Studying</span> &nbsp;M.S. Product Innovation</p>
-            <p><span className="font-bold text-navy">✉ Background</span> &nbsp;Computer Science & Data Analytics</p>
-          </div>
-          <a href={NOTION_URL} target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-full border border-navy/20 bg-white px-5 py-3 text-xs font-bold text-navy hover:bg-lilac/40">View Full Portfolio ↗</a>
-          <div className="mt-7 grid grid-cols-5 gap-2">
-            {values.map((value) => (
-              <div key={value.label} className={`rounded-xl px-1 py-4 text-center ${value.tone}`}>
-                <p className="text-base">{value.icon}</p>
-                <p className="mt-2 text-[10px] font-bold leading-tight text-navy">{value.label}</p>
-              </div>
-            ))}
-          </div>
-          <div className="script absolute bottom-4 right-5 text-lg text-navy/70">Good vibes ♡</div>
-        </div>
-
-        <div id="skills" className="card-soft relative overflow-hidden px-5 py-8 md:col-span-3">
-          <img src={blossom} alt="" aria-hidden="true" width={768} height={1280} loading="lazy" className="pointer-events-none absolute -right-8 top-0 h-full w-28 object-cover opacity-70" />
-          <div className="relative z-10 pr-16">
-            <h2 className="display text-2xl text-navy">My Toolkit ✎</h2>
-            <p className="mt-2 text-xs leading-5 text-navy/65">I’m technical, but technology is just one part of how I solve problems.</p>
-            <div className="mt-5 space-y-2.5">
-              {toolkit.map((item) => (
-                <div key={item.title} className={`rounded-xl px-4 py-3 ${item.tone}`}>
-                  <p className="text-xs font-bold text-navy">{item.icon} &nbsp;{item.title}</p>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {item.items.map((chip) => <span key={chip} className="rounded-md bg-white/80 px-2 py-1 text-[9px] font-semibold text-navy/75">{chip}</span>)}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <p className="script absolute bottom-5 right-4 z-10 text-right text-base text-navy">Different<br />perspectives.<br />Better solutions. ♡</p>
+        <div className="relative min-h-[610px] self-end">
+          <div className="absolute left-[8%] top-[2%] aspect-square w-[75%] rounded-full bg-crimson" />
+          <img src={landscape} alt="" aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[46%] w-full object-cover object-bottom opacity-55 mix-blend-multiply" />
+          <img src={blossom} alt="" aria-hidden="true" className="absolute right-0 top-4 h-64 w-48 object-cover opacity-80 mix-blend-multiply" />
+          <img src={portrait} alt="Shivani Merchant seated and looking over her shoulder" width={1200} height={1500} className="absolute bottom-0 left-[2%] z-10 h-[93%] w-[94%] object-cover object-top mix-blend-multiply" />
+          <p className="script absolute right-1 top-0 z-20 text-5xl text-crimson">SM</p>
         </div>
       </div>
+    </section>
+  );
+}
+
+function About() {
+  const skills = ["Product Innovation", "UI/UX Design", "Product Strategy", "Visual Design", "AI + Emerging Technology", "Storytelling"];
+  return (
+    <section id="about" className="editorial-shell paper-panel relative z-20 -mt-5 grid gap-7 p-5 md:grid-cols-[0.95fr_1.1fr_0.75fr] md:p-7">
+      <div className="relative overflow-hidden rounded-sm">
+        <img src={desk} alt="Creative workspace with laptop and cherry blossoms" width={1408} height={912} loading="lazy" className="h-full min-h-72 w-full object-cover" />
+        <p className="script absolute left-5 top-5 -rotate-6 text-2xl text-ink">Design a life you love —</p>
+      </div>
+      <div className="py-3">
+        <h2 className="brand-serif text-4xl uppercase leading-none text-crimson">Hi, I’m Shivani.</h2>
+        <p className="brand-serif mt-2 text-2xl uppercase leading-5 text-crimson">Product thinker &<br />multidisciplinary creative.</p>
+        <p className="mt-5 text-xs leading-5 text-ink/75">I started in computer science and data analytics, but somewhere between designing interfaces, building digital experiences, creating visual stories, and studying how people interact with technology, I realized I was most interested in the space between disciplines.</p>
+        <p className="mt-3 text-xs leading-5 text-ink/75">Today, I explore how technology, design, business, human behavior, and storytelling can work together to create products people genuinely connect with.</p>
+        <p className="script mt-2 text-4xl text-ink">Shivani ♡</p>
+      </div>
+      <ul className="space-y-3 py-2">{skills.map((skill, i) => <li key={skill} className="flex items-center gap-3 text-xs font-bold text-ink"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blush text-lg text-crimson">{["♧", "▣", "⌁", "✿", "◉", "▤"][i]}</span>{skill}</li>)}</ul>
     </section>
   );
 }
 
 function Work() {
   return (
-    <section id="work" className="portfolio-grid">
-      <div className="card-soft px-5 py-8 md:col-span-5">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <h2 className="display text-2xl text-navy">Featured Projects <span className="text-gold">✦</span></h2>
-            <p className="mt-1 text-xs text-navy/60">A few things I’ve built, designed, and loved working on.</p>
-          </div>
-          <a href={NOTION_URL} target="_blank" rel="noreferrer" className="shrink-0 text-[11px] font-bold text-navy">View All Projects →</a>
-        </div>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-          {projects.map((project, i) => (
-            <Reveal key={project.title} delay={i * 60}>
-              <article className="flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white">
-                <img src={projectShots[i]} alt={project.title} width={944} height={704} loading="lazy" className="h-24 w-full object-cover" />
-                <div className="flex flex-1 flex-col p-3.5">
-                  <h3 className="text-sm font-bold text-navy">{project.title}</h3>
-                  <p className="mt-2 text-[10px] leading-4 text-navy/60">{project.made}</p>
-                  <div className="mt-auto pt-3">
-                    <div className="flex flex-wrap gap-1">
-                      {project.tags.slice(0, 3).map((tag) => <span key={tag} className="rounded-md bg-lilac/50 px-2 py-1 text-[8px] font-bold text-navy/75">{tag}</span>)}
-                    </div>
-                    <div className="mt-2 text-right text-base text-navy/70">↗</div>
-                  </div>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-
-      <div id="experience" className="card-soft relative px-5 py-8 md:col-span-4">
-        <h2 className="display text-2xl text-navy">Experience <span className="text-coral">✿</span></h2>
-        <p className="mt-1 text-xs text-navy/60">Where I’ve been, what I’ve done, and what I’m excited for next.</p>
-        <div className="relative mt-6 space-y-5 border-l border-navy/15 pl-5">
-          {experience.slice(0, 4).map((job, i) => (
-            <div key={job.company} className="relative">
-              <span className={`absolute -left-[25px] top-1 h-2.5 w-2.5 rounded-full ${["bg-gold", "bg-coral", "bg-lilac", "bg-mint"][i]}`} />
-              <div className="flex flex-wrap items-baseline gap-2">
-                <h3 className="text-xs font-bold text-navy">{job.role}</h3>
-                <span className="text-[9px] text-navy/45">| {job.company}</span>
-              </div>
-              <p className="mt-1 text-[9px] text-navy/50">{job.period}</p>
-              <ul className="mt-2 space-y-1 text-[10px] leading-4 text-navy/65">{job.points.slice(0, 2).map((point) => <li key={point}>• {point}</li>)}</ul>
-            </div>
-          ))}
-        </div>
-        <p className="script absolute bottom-6 right-5 text-right text-base text-navy">Always learning.<br />Always growing. ♡</p>
-      </div>
-
-      <div className="card-soft px-5 py-8 md:col-span-3">
-        <h2 className="display text-2xl text-navy">What Makes Me, Me</h2>
-        <p className="mt-1 text-xs text-navy/60">A little moodboard of the things that light me up.</p>
-        <div className="mt-5 grid gap-3 sm:grid-cols-[1.05fr_0.95fr]">
-          <div className="relative overflow-hidden rounded-xl">
-            <img src={moodboard} alt="Moodboard of films, travel, food, books and photography" width={1024} height={1024} loading="lazy" className="h-full min-h-56 w-full object-cover" />
-          </div>
-          <div className="space-y-1.5">
-            {interests.map((item) => (
-              <div key={item.label} className="flex items-center gap-2 rounded-lg bg-peach/40 px-2.5 py-2 text-[10px] font-semibold text-navy">
-                <span>{item.icon}</span>{item.label}
-              </div>
-            ))}
-          </div>
-        </div>
+    <section id="work" className="editorial-shell paper-panel mt-3 p-5 md:p-7">
+      <div className="flex items-end justify-between border-b border-crimson/25 pb-2"><h2 className="brand-serif text-3xl uppercase text-crimson">Selected Work</h2><a href={NOTION_URL} target="_blank" rel="noreferrer" className="text-[9px] font-bold uppercase text-ink">View all projects →</a></div>
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        {projectCards.map((project, i) => <article key={project.title} className="group min-w-0"><div className="relative overflow-hidden rounded-lg"><img src={projectImages[i]} alt={project.title} width={800} height={600} loading="lazy" className="aspect-[1.18] w-full object-cover transition-transform duration-500 group-hover:scale-105" /><span className="absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-crimson text-paper">↗</span></div><p className="brand-serif mt-2 text-lg leading-none text-crimson">{String(i + 1).padStart(2, "0")}<br />{project.title.toUpperCase()}</p><p className="mt-2 text-[10px] leading-4 text-ink/70">{project.made}</p><p className="mt-1 text-[10px] font-semibold text-ink">{project.tags.slice(0, 2).join(" + ")}</p></article>)}
       </div>
     </section>
   );
 }
 
-function More() {
+function SkillsJourney() {
   return (
-    <section className="portfolio-grid">
-      <div className="card-soft px-5 py-8 md:col-span-4">
-        <h2 className="display text-2xl text-navy">Recognition ✦</h2>
-        <div className="mt-5 grid gap-2 sm:grid-cols-2">
-          {awards.slice(0, 4).map((award) => (
-            <div key={award.name} className="rounded-xl bg-butter/50 px-4 py-3">
-              <p className="text-xs font-bold text-navy">{award.name}</p>
-              <p className="mt-1 text-[10px] text-navy/50">{award.date}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="card-soft px-5 py-8 md:col-span-4">
-        <h2 className="display text-2xl text-navy">Community</h2>
-        <div className="mt-5 space-y-2">
-          {leadership.map((item) => (
-            <div key={item.role} className="flex items-center justify-between gap-4 rounded-xl bg-mint/40 px-4 py-3">
-              <p className="text-xs font-bold text-navy">{item.role}</p>
-              <p className="shrink-0 text-[9px] text-navy/50">{item.period}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="card-soft relative min-h-64 overflow-hidden md:col-span-4">
-        <img src={blossom} alt="Cherry blossoms over a watercolor landscape" width={768} height={1280} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-        <p className="script absolute right-6 top-8 max-w-44 text-right text-2xl text-navy">Same girl…<br />Bigger dreams. ♡</p>
-        <div className="absolute bottom-5 left-5 right-5 rounded-xl bg-white/85 p-4 backdrop-blur-sm">
-          <p className="eyebrow text-navy/50">Now studying</p>
-          <p className="mt-2 text-sm font-bold text-navy">{education[0]?.degree}</p>
-          <p className="mt-1 text-[10px] text-navy/60">{education[0]?.school}</p>
-        </div>
-      </div>
+    <section id="skills" className="editorial-shell mt-3 grid gap-3 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="paper-panel p-6 md:p-8"><h2 className="brand-serif border-b border-crimson/25 pb-2 text-3xl uppercase text-crimson">What I bring to the table</h2><div className="mt-5 grid gap-x-8 gap-y-4 sm:grid-cols-2">{capabilities.map(([icon,label]) => <div key={label} className="flex items-center gap-3 text-xs font-semibold text-ink"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-blush text-crimson">{icon}</span>{label}</div>)}</div></div>
+      <div className="paper-panel relative overflow-hidden p-6 md:p-8"><h2 className="brand-serif border-b border-crimson/25 pb-2 text-3xl uppercase text-crimson">My journey, so far</h2><div className="mt-5 grid grid-cols-2 gap-3"><div className="rounded-lg bg-blush p-4"><b className="brand-serif text-4xl text-crimson">4+</b><p className="text-[9px] font-bold uppercase">Creative disciplines</p></div><div className="rounded-lg bg-sage/60 p-4"><b className="brand-serif text-4xl text-crimson">150+</b><p className="text-[9px] font-bold uppercase">Volunteer / service hours</p></div><div className="rounded-lg bg-sage/60 p-4"><b className="brand-serif text-4xl text-crimson">3+</b><p className="text-[9px] font-bold uppercase">Leadership roles</p></div><div className="rounded-lg bg-blush p-4"><b className="brand-serif text-2xl text-crimson">Multiple</b><p className="text-[9px] font-bold uppercase">Product & UX projects</p></div></div><p className="brand-serif absolute bottom-7 right-6 hidden max-w-32 border-l border-crimson/40 pl-5 text-lg italic text-ink/75 xl:block">A more curious, compassionate and creative world.</p></div>
     </section>
   );
+}
+
+function Experience() {
+  const timeline = [
+    ["Undergraduate", "B.S. Computer Science", "University of Arkansas"],
+    ["Graphic Designer", "Nexstar Media Group", "Inc."],
+    ["UI/UX Designer", "Product & App Projects", ""],
+    ["Commercialization Intern", "Aurum Endeavors", "Science Venture Studio"],
+    ["International Student Leader", "ICT, SASA, ISO", "University of Arkansas"],
+    ["M.S. Product Innovation", "Sam M. Walton College", "University of Arkansas"],
+  ];
+  return <section id="experience" className="editorial-shell mt-3 px-3 py-5"><div className="flex items-center gap-4"><h2 className="brand-serif shrink-0 text-3xl uppercase text-crimson">Experience</h2><div className="h-px flex-1 bg-crimson/35" /><span className="text-[8px] font-semibold uppercase text-ink/55">A journey of exploration, learning and impact</span></div><div className="mt-5 grid gap-5 md:grid-cols-6">{timeline.map(([title, sub, place]) => <div key={title} className="relative border-t border-crimson/40 pt-4 before:absolute before:-top-1 before:left-3 before:h-2 before:w-2 before:rounded-full before:bg-crimson"><h3 className="text-[11px] font-bold leading-tight text-ink">{title}</h3><p className="mt-1 text-[9px] text-ink/70">{sub}</p><p className="text-[8px] text-ink/50">{place}</p></div>)}</div></section>;
+}
+
+function Playground() {
+  return <section id="playground" className="editorial-shell paper-panel mt-3 p-5 md:p-7"><div className="grid items-end gap-5 lg:grid-cols-[1fr_250px]"><div><h2 className="brand-serif text-3xl uppercase text-crimson">Beyond the screen</h2><div className="mt-4 overflow-hidden rounded-lg"><img src={filmstrip} alt="Film, travel, learning, dramas and creative experimentation" width={1808} height={608} loading="lazy" className="aspect-[5/1.22] w-full object-cover" /></div><div className="mt-2 grid grid-cols-5 gap-2">{personalLabels.map(label => <p key={label} className="text-[9px] font-bold leading-tight text-ink">{label}</p>)}</div></div><p className="script pb-4 text-center text-3xl text-crimson">Same curiosity.<br />Different stories ♡</p></div></section>;
 }
 
 function Contact() {
-  return (
-    <section id="contact" className="portfolio-grid">
-      <div className="card-soft relative overflow-hidden px-5 py-14 text-center md:col-span-12">
-        <img src={landscape} alt="Watercolor landscape with cherry blossoms" width={1920} height={640} loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-80" />
-        <div className="relative z-10 mx-auto max-w-2xl">
-          <h2 className="display text-3xl text-navy md:text-5xl">Let’s Create Something Great <span className="text-gold">✦</span></h2>
-          <p className="mt-3 text-sm leading-6 text-navy/70">Have a project in mind, a question, or just want to say hi?<br />I’d love to hear from you.</p>
-          <a href={`mailto:${contact.email}`} className="mt-6 inline-flex rounded-full bg-navy px-7 py-3.5 text-xs font-bold text-paper transition-transform hover:-translate-y-0.5">Get In Touch →</a>
-          <div className="mt-6 flex flex-wrap justify-center gap-6 text-xs font-bold text-navy">
-            <a href={NOTION_URL} target="_blank" rel="noreferrer">▤ Portfolio</a>
-            <a href={`mailto:${contact.email}`}>✉ Email</a>
-            <a href={`tel:${contact.phone.replace(/-/g, "")}`}>☏ {contact.phone}</a>
-          </div>
-        </div>
-        <p className="script absolute right-8 top-10 hidden rotate-3 text-xl text-navy md:block">See you<br />soon! ♡</p>
-        <p className="script absolute left-8 top-10 hidden -rotate-3 text-xl text-navy md:block">Good ideas<br />travel far ↗</p>
-      </div>
-    </section>
-  );
+  return <section id="contact" className="editorial-shell relative mt-3 overflow-hidden rounded-[1.7rem] bg-crimson px-7 py-8 text-paper md:px-16"><img src={landscape} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-15 mix-blend-screen" /><div className="relative z-10 grid items-center gap-8 md:grid-cols-[1.2fr_0.8fr]"><div><h2 className="display text-5xl uppercase leading-[0.88] md:text-7xl">Let’s build<br />something<br />people feel.</h2><p className="script ml-24 mt-1 text-3xl">and remember.</p></div><div className="text-xs"><div className="space-y-3"><a href={`mailto:${contact.email}`} className="block">✉ &nbsp; {contact.email}</a><a href={NOTION_URL} target="_blank" rel="noreferrer" className="block">▣ &nbsp; Portfolio</a><a href={`tel:${contact.phone.replace(/-/g, "")}`} className="block">☏ &nbsp; {contact.phone}</a></div><a href={`mailto:${contact.email}`} className="mt-6 inline-flex rounded-full bg-paper px-7 py-4 text-[10px] font-bold uppercase text-crimson">Get in touch <span className="ml-5">→</span></a></div></div></section>;
 }
 
 function Index() {
-  return (
-    <main className="page-wash min-h-screen pb-3 text-navy">
-      <Nav />
-      <Hero />
-      <Work />
-      <More />
-      <Contact />
-      <footer className="mx-auto flex w-[min(100%-1.5rem,1560px)] flex-wrap items-center justify-between gap-3 py-6 text-[10px] text-navy/60">
-        <p>© {new Date().getFullYear()} Shivani Merchant &nbsp;|&nbsp; Built with curiosity, creativity and a lot of ♡</p>
-        <div className="flex gap-4 font-semibold">
-          <a href="#top">Home</a><a href="#about">About</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
-        </div>
-      </footer>
-    </main>
-  );
+  return <main className="page-wash min-h-screen overflow-hidden pb-5 text-ink"><Nav /><Hero /><About /><Work /><SkillsJourney /><Experience /><Playground /><Contact /><footer className="editorial-shell flex flex-wrap justify-between gap-3 py-6 text-[9px] text-ink/55"><p>© {new Date().getFullYear()} Shivani Merchant · Designed with curiosity.</p><p>{education[0]?.degree} · Fayetteville, Arkansas</p></footer></main>;
 }

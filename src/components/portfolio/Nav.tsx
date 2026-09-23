@@ -1,25 +1,24 @@
 import { useState } from "react";
 
 const links = [
-  { id: "top", label: "Home" },
+  { id: "work", label: "Work" },
   { id: "about", label: "About" },
-  { id: "work", label: "Projects" },
   { id: "experience", label: "Experience" },
-  { id: "skills", label: "Skills" },
+  { id: "playground", label: "Playground" },
   { id: "contact", label: "Contact" },
 ];
 
 export function Nav() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-navy/10 bg-paper/90 backdrop-blur-md">
-      <nav className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 md:px-8">
-        <a href="#top" className="script text-3xl text-navy" aria-label="Shivani Merchant home">Sm<span className="align-top text-sm text-coral">♡</span></a>
-        <ul className="hidden items-center gap-7 md:flex">{links.map((link) => <li key={link.id}><a href={`#${link.id}`} className="text-[11px] font-semibold text-navy transition-colors hover:text-coral">{link.label}</a></li>)}</ul>
-        <a href="#contact" className="hidden rounded-full bg-pink px-5 py-2.5 text-xs font-bold text-navy transition-transform hover:-translate-y-0.5 md:inline-flex">Let’s talk →</a>
-        <button type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="flex h-9 w-9 items-center justify-center text-xl text-navy md:hidden">{open ? "×" : "☰"}</button>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-crimson/10 bg-paper/90 backdrop-blur-md">
+      <nav className="mx-auto flex h-16 w-[min(100%-2rem,1360px)] items-center justify-between">
+        <a href="#top" className="brand-serif text-xl leading-none text-crimson md:text-2xl" aria-label="Shivani Merchant home">SHIVANI<br />MERCHANT</a>
+        <ul className="hidden items-center gap-8 md:flex">{links.map((link) => <li key={link.id}><a href={`#${link.id}`} className="text-[11px] font-bold text-ink transition-colors hover:text-crimson">{link.label}</a></li>)}</ul>
+        <a href="#contact" className="hidden rounded-full bg-crimson px-6 py-3 text-[10px] font-bold uppercase text-paper transition-transform hover:-translate-y-0.5 md:inline-flex">Let’s create <span className="ml-3">→</span></a>
+        <button type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="flex h-10 w-10 items-center justify-center text-xl text-crimson md:hidden">{open ? "×" : "☰"}</button>
       </nav>
-      {open ? <div className="border-t border-navy/10 bg-paper px-5 py-4 md:hidden"><ul className="grid grid-cols-2 gap-2">{links.map((link) => <li key={link.id}><a href={`#${link.id}`} onClick={() => setOpen(false)} className="block rounded-md bg-pink/50 px-4 py-3 text-sm font-bold text-navy">{link.label}</a></li>)}</ul></div> : null}
+      {open ? <div className="border-t border-crimson/10 bg-paper px-5 py-4 md:hidden"><ul className="grid grid-cols-2 gap-2">{links.map((link) => <li key={link.id}><a href={`#${link.id}`} onClick={() => setOpen(false)} className="block rounded-md bg-blush px-4 py-3 text-sm font-bold text-crimson">{link.label}</a></li>)}</ul></div> : null}
     </header>
   );
 }
