@@ -103,7 +103,7 @@ function Hero() {
     <section id="top" className="pt-20 md:pt-24">
       <div className="portfolio-grid">
         <div className="card-soft relative overflow-hidden px-5 py-8 md:col-span-6 md:px-9 md:py-10">
-          <div className="grid items-center gap-7 pb-16 sm:min-h-[440px] sm:pb-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="grid items-center gap-7 pb-28 sm:min-h-[440px] sm:pb-28 lg:grid-cols-[0.85fr_1.15fr]">
             <div className="relative z-10 min-w-0">
               <h1 className="display text-4xl text-navy sm:text-5xl lg:text-6xl">
                 Hi, I’m<br />Shivani<span className="align-top text-2xl text-gold">✦</span>
@@ -153,13 +153,13 @@ function Hero() {
         </div>
 
         <div id="skills" className="card-soft relative overflow-hidden px-5 py-8 md:col-span-3">
-          <ResponsiveArtwork mobile={blossomMobile.url} desktop={blossomDesktop.url} alt="" width={768} height={1280} className="pointer-events-none mb-6 h-32 w-full rounded-xl object-cover object-[center_32%] opacity-80 sm:absolute sm:-right-8 sm:top-0 sm:mb-0 sm:h-full sm:w-28 sm:rounded-none sm:object-center sm:opacity-70" />
-          <div className="relative z-10 sm:pr-16">
+          <ResponsiveArtwork mobile={blossomMobile.url} desktop={blossomDesktop.url} alt="" width={768} height={1280} className="pointer-events-none mb-6 h-32 w-full rounded-xl object-cover object-[center_32%] opacity-80 md:h-24" />
+          <div className="relative z-10">
             <h2 className="display text-2xl text-navy">My Toolkit ✎</h2>
             <p className="mt-2 text-xs leading-5 text-navy/65">I’m technical, but technology is just one part of how I solve problems.</p>
             <div className="mt-5 space-y-2.5">
               {toolkit.map((item) => (
-                <div key={item.title} className={`rounded-xl px-4 py-3 ${item.tone}`}>
+                <div key={item.title} className={`rounded-xl px-4 py-3 md:px-3 md:py-2.5 ${item.tone}`}>
                   <p className="break-words text-xs font-bold text-navy">{item.icon} &nbsp;{item.title}</p>
                   <div className="mt-2 flex flex-wrap gap-1.5">
                     {item.items.map((chip) => <span key={chip} className="rounded-md bg-white/80 px-2 py-1 text-[9px] font-semibold text-navy/75">{chip}</span>)}
