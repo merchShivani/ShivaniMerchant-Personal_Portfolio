@@ -13,6 +13,7 @@ export const projects = [
     index: "01",
     title: "SkinMate",
     kicker: "AI Skincare Product Concept",
+    url: "",
     problem:
       "Skincare routines are static, while skin changes with season, stress and environment.",
     role: "Product concept, UX, high-fidelity prototyping",
@@ -26,6 +27,7 @@ export const projects = [
     index: "02",
     title: "Powderized Breast Milk",
     kicker: "Aurum Endeavors — Concept & Prototype Case Study",
+    url: "",
     problem:
       "Storing and transporting breast milk limits accessibility and everyday usability for families.",
     role: "Commercialization intern — research, product planning",
@@ -40,6 +42,7 @@ export const projects = [
     index: "03",
     title: "AI Content Tool Redesign",
     kicker: "Media — Internal Platform",
+    url: "",
     problem: "Content generation workflows inside the platform created friction for daily users.",
     role: "UX contributor",
     made: "Interface and interaction improvements for an internal AI content platform.",
@@ -51,6 +54,7 @@ export const projects = [
     index: "04",
     title: "Redefining Food at Starbucks",
     kicker: "Design Research Case Study",
+    url: "",
     problem: "The food side of the Starbucks experience lags behind the beverage ritual.",
     role: "Design researcher",
     made: "Product-level interventions across ordering, packaging and interaction.",
