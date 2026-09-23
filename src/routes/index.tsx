@@ -324,7 +324,7 @@ function Splash() {
         <p aria-label="Sm" className="splash-logo script inline-flex items-center text-8xl text-paper sm:text-9xl">
           Sm<span className="ml-1 inline-block align-middle text-[0.62em] text-[oklch(0.71_0.16_358)] drop-shadow-[0_0_26px_oklch(0.71_0.16_358_/_0.75)]">♡</span>
         </p>
-        <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs" style={{ animationDelay: "3.4s" }}>
+        <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs" style={{ animationDelay: "1.5s" }}>
           welcome to my world <span className="text-gold">✦</span>
         </p>
       </div>
