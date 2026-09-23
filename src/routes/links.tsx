@@ -52,7 +52,7 @@ function LinksPage() {
         <div className="absolute right-12 bottom-40 text-sm text-coral/50">✦</div>
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-md flex-col px-5 pb-10 pt-10 md:justify-center">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-md flex-col justify-center px-5 py-10">
         <header className="text-center">
           <a href="/" className="script text-3xl text-navy" aria-label="Shivani Merchant home">Sm<span className="align-top text-sm text-coral">♡</span></a>
           <Reveal>
@@ -85,7 +85,7 @@ function LinksPage() {
           </Reveal>
         </header>
 
-        <nav aria-label="My links" className="mt-8 flex-1 space-y-3">
+        <nav aria-label="My links" className="mt-8 space-y-3">
           {links.map((link, i) => {
             const inner = (
               <span className={`flex min-h-16 w-full items-center gap-4 rounded-2xl border border-navy/10 px-5 py-4 text-left shadow-[0_10px_30px_-22px_color-mix(in_oklch,var(--navy)_55%,transparent)] transition-transform hover:-translate-y-0.5 active:translate-y-0 ${link.tone}`}>
