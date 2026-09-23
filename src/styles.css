@@ -279,10 +279,6 @@
   animation: splash-bloom 1.2s ease-out 0.15s both;
 }
 
-@utility splash-letter {
-  animation: splash-letter 1.9s cubic-bezier(0.3, 0.7, 0.3, 1) both;
-}
-
 @utility splash-fade {
   animation: splash-fade 0.7s ease-in forwards;
 }
