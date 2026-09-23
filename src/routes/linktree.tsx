@@ -149,6 +149,50 @@ function LinktreePage() {
           <p className="mt-2 text-[10px] text-paper/50">© {new Date().getFullYear()} Shivani Merchant · Find me everywhere ♡</p>
         </footer>
       </div>
+
+      {emailOpen && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center" role="dialog" aria-modal="true" aria-label="Choose how to email Shivani">
+          <button type="button" aria-label="Close" className="absolute inset-0 bg-navy/70 backdrop-blur-sm" onClick={() => setEmailOpen(false)} />
+          <div className="relative z-10 w-full max-w-sm rounded-t-3xl bg-paper p-5 text-navy shadow-2xl sm:rounded-3xl sm:p-6">
+            <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-navy/20 sm:hidden" aria-hidden />
+            <h2 className="display text-lg">Email me<span className="align-top text-sm text-coral">✦</span></h2>
+            <p className="mt-1 text-xs font-semibold text-navy/50">Pick where your draft opens — {contact.email}</p>
+            <div className="mt-3 space-y-2">
+              {emailChoices.map((choice) => (
+                <a
+                  key={choice.label}
+                  href={choice.href}
+                  target={choice.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noreferrer"
+                  onClick={() => setEmailOpen(false)}
+                  className="flex min-h-[56px] w-full items-center gap-3 rounded-2xl bg-white px-4 py-3 text-left shadow-[0_10px_26px_-20px_oklch(0.28_0.065_246)] transition-transform hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-bold text-navy ${choice.dot}`}>{choice.icon}</span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-base font-bold leading-tight">{choice.label}</span>
+                    <span className="mt-0.5 block text-[11px] font-semibold text-navy/50">{choice.note}</span>
+                  </span>
+                  <span className="shrink-0 text-navy/60" aria-hidden>↗</span>
+                </a>
+              ))}
+              <button
+                type="button"
+                onClick={handleCopy}
+                className="flex min-h-[56px] w-full items-center gap-3 rounded-2xl bg-navy px-4 py-3 text-left text-paper transition-transform hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-paper/15 text-base font-bold">{copied ? "♡" : "⧉"}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-base font-bold leading-tight">{copied ? "Copied to clipboard ♡" : "Copy my email address"}</span>
+                  <span className="mt-0.5 block text-[11px] font-semibold text-paper/60">{contact.email}</span>
+                </span>
+              </button>
+            </div>
+            <button type="button" onClick={() => setEmailOpen(false)} className="mt-3 w-full rounded-full py-2 text-xs font-bold uppercase tracking-widest text-navy/50 hover:text-navy">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
