@@ -321,11 +321,37 @@ function Splash() {
         <div className="splash-bloom absolute right-1/4 top-1/3 h-40 w-40 rounded-full bg-gold/15 blur-3xl" style={{ animationDelay: "0.7s" }} />
       </div>
       <div className="relative z-10 text-center">
-        <p aria-label="SM" className="script inline-flex items-center text-8xl text-paper sm:text-9xl">
-          <span className="splash-letter inline-block drop-shadow-[0_0_26px_oklch(0.71_0.16_358_/_0.55)]" style={{ animationDelay: "0.4s" }}>S</span>
-          <span className="splash-letter inline-block drop-shadow-[0_0_26px_oklch(0.71_0.16_358_/_0.55)]" style={{ animationDelay: "1.6s" }}>M</span>
-        </p>
-        <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs" style={{ animationDelay: "2.9s" }}>
+        <svg viewBox="0 0 440 240" role="img" aria-label="SM" className="h-44 w-auto overflow-visible drop-shadow-[0_0_26px_oklch(0.71_0.16_358_/_0.5)] sm:h-56">
+          <text
+            x="60"
+            y="180"
+            fontSize="200"
+            fill="oklch(0.96 0.02 90)"
+            stroke="oklch(0.96 0.02 90)"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="script"
+            style={{ strokeDasharray: 3000, animation: "splash-write 1.6s ease-in-out 0.3s both, splash-ink 0.7s ease-out 1.6s both" }}
+          >
+            S
+          </text>
+          <text
+            x="205"
+            y="180"
+            fontSize="200"
+            fill="oklch(0.96 0.02 90)"
+            stroke="oklch(0.96 0.02 90)"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="script"
+            style={{ strokeDasharray: 3600, animation: "splash-write 1.6s ease-in-out 1.9s both, splash-ink 0.7s ease-out 3.2s both" }}
+          >
+            M
+          </text>
+        </svg>
+        <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs" style={{ animationDelay: "3.4s" }}>
           welcome to my world <span className="text-gold">✦</span>
         </p>
       </div>

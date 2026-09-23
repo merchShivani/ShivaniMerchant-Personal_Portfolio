@@ -253,10 +253,14 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes splash-letter {
-  0% { opacity: 0; clip-path: inset(0 100% 0 0); transform: translateY(0.08em) scale(0.94); filter: blur(5px); }
-  40% { opacity: 1; clip-path: inset(0 40% 0 0); filter: blur(0); }
-  100% { opacity: 1; clip-path: inset(0 -8% 0 0); transform: translateY(0) scale(1); filter: blur(0); }
+@keyframes splash-write {
+  from { stroke-dashoffset: 3000; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes splash-ink {
+  from { fill-opacity: 0; }
+  to { fill-opacity: 1; }
 }
 
 @keyframes splash-fade {
@@ -273,10 +277,6 @@
 
 @utility splash-bloom {
   animation: splash-bloom 1.2s ease-out 0.15s both;
-}
-
-@utility splash-letter {
-  animation: splash-letter 1.9s cubic-bezier(0.3, 0.7, 0.3, 1) both;
 }
 
 @utility splash-fade {
