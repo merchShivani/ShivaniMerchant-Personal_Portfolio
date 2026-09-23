@@ -44,23 +44,29 @@ function LinksPage() {
     <main className="page-wash min-h-screen text-navy">
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0"
+        className="pointer-events-none fixed inset-0 bg-gradient-to-br from-pink/25 via-peach/30 to-lilac/30"
       >
-        <div className="absolute -left-20 top-10 h-56 w-56 rounded-full bg-pink/30 blur-3xl" />
-        <div className="absolute -right-16 top-1/3 h-52 w-52 rounded-full bg-lilac/40 blur-3xl" />
-        <div className="absolute bottom-16 left-1/4 h-48 w-48 rounded-full bg-butter/50 blur-3xl" />
-        <div className="absolute bottom-1/4 right-10 h-36 w-36 rounded-full bg-mint/40 blur-3xl" />
-        <div className="absolute left-6 top-24 text-xl text-coral/50">✿</div>
-        <div className="absolute right-8 top-16 text-base text-gold/70">✦</div>
-        <div className="absolute bottom-24 left-10 text-lg text-lilac/80">♡</div>
-        <div className="absolute right-12 bottom-40 text-sm text-coral/50">✦</div>
+        <div className="absolute -left-24 top-6 h-72 w-72 rounded-full bg-pink/45 blur-3xl" />
+        <div className="absolute -right-20 top-1/4 h-64 w-64 rounded-full bg-lilac/55 blur-3xl" />
+        <div className="absolute bottom-10 left-1/5 h-60 w-60 rounded-full bg-butter/60 blur-3xl" />
+        <div className="absolute bottom-1/4 right-6 h-48 w-48 rounded-full bg-mint/55 blur-3xl" />
+        <div className="absolute left-1/3 top-1/2 h-40 w-40 rounded-full bg-coral/30 blur-3xl" />
+        <div className="absolute -left-10 bottom-1/3 h-44 w-44 rounded-full bg-sky/45 blur-3xl" />
+        <div className="absolute left-5 top-20 text-3xl text-coral/60">✿</div>
+        <div className="absolute right-8 top-14 text-2xl text-gold/80">✦</div>
+        <div className="absolute bottom-24 left-8 text-2xl text-lilac/90">♡</div>
+        <div className="absolute right-14 bottom-40 text-xl text-coral/60">✦</div>
+        <div className="absolute left-1/2 top-8 text-xl text-sky/70">✿</div>
+        <div className="absolute right-6 top-2/3 text-2xl text-gold/60">♡</div>
+        <div className="absolute bottom-12 right-1/3 text-xl text-mint/80">✦</div>
+        <div className="absolute left-10 top-1/2 text-lg text-peach/80">✿</div>
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-md flex-col justify-center px-5 py-10">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-xl flex-col justify-center px-6 py-12 sm:px-8">
         <header className="text-center">
           <a href="/" className="script text-3xl text-navy" aria-label="Shivani Merchant home">Sm<span className="align-top text-sm text-coral">♡</span></a>
           <Reveal>
-            <div className="relative mx-auto mt-6 w-40">
+            <div className="relative mx-auto mt-6 w-44 sm:w-52">
               <div className="absolute left-0 top-3 h-16 w-16 rounded-full bg-lilac/70" />
               <div className="absolute right-0 top-0 h-12 w-12 rounded-full bg-butter/70" />
               <div className="absolute -bottom-1 left-6 h-14 w-14 rounded-full bg-pink/60" />
@@ -81,9 +87,9 @@ function LinksPage() {
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="display mt-6 text-3xl">Shivani Merchant<span className="align-top text-lg text-gold">✦</span></h1>
-            <p className="eyebrow mt-3 text-[10px] text-coral">Product Innovation × Design × Technology × Storytelling</p>
-            <p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-navy/70">
+            <h1 className="display mt-6 text-4xl sm:text-5xl">Shivani Merchant<span className="align-top text-xl sm:text-2xl text-gold">✦</span></h1>
+            <p className="eyebrow mt-3 text-xs sm:text-sm text-coral">Product Innovation × Design × Technology × Storytelling</p>
+            <p className="mx-auto mt-3 max-w-sm text-base sm:text-lg leading-7 text-navy/70">
               I build creative solutions with technology, a curious mind, and a heart for people.
             </p>
           </Reveal>
@@ -92,13 +98,13 @@ function LinksPage() {
         <nav aria-label="My links" className="mt-8 space-y-3">
           {links.map((link, i) => {
             const inner = (
-              <span className={`flex min-h-16 w-full items-center gap-4 rounded-2xl border border-navy/10 px-5 py-4 text-left shadow-[0_10px_30px_-22px_color-mix(in_oklch,var(--navy)_55%,transparent)] transition-transform hover:-translate-y-0.5 active:translate-y-0 ${link.tone}`}>
-                <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold ${link.tone.includes("text-paper") ? "bg-paper/15" : "bg-navy/5"}`}>{link.icon}</span>
+              <span className={`flex min-h-[72px] w-full items-center gap-4 rounded-2xl border border-navy/10 px-6 py-5 text-left shadow-[0_10px_30px_-22px_color-mix(in_oklch,var(--navy)_55%,transparent)] transition-transform hover:-translate-y-0.5 active:translate-y-0 ${link.tone}`}>
+                <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-lg font-bold ${link.tone.includes("text-paper") ? "bg-paper/15" : "bg-navy/5"}`}>{link.icon}</span>
                 <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-bold leading-tight">{link.label}</span>
-                  <span className={`mt-0.5 block truncate text-[10px] font-semibold ${link.tone.includes("text-paper") ? "text-paper/60" : "text-navy/50"}`}>{link.note}</span>
+                  <span className="block text-lg font-bold leading-tight">{link.label}</span>
+                  <span className={`mt-1 block truncate text-xs font-semibold ${link.tone.includes("text-paper") ? "text-paper/60" : "text-navy/50"}`}>{link.note}</span>
                 </span>
-                <span className="shrink-0 text-base" aria-hidden>↗</span>
+                <span className="shrink-0 text-lg" aria-hidden>↗</span>
               </span>
             );
             return (
