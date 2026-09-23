@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/portfolio/Nav";
 import { Reveal } from "@/components/Reveal";
 import portraitMobile from "@/assets/portrait-mobile.webp.asset.json";
