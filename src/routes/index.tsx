@@ -1,10 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/portfolio/Nav";
 import { Reveal } from "@/components/Reveal";
-import portrait from "@/assets/shivani-editorial-portrait.png";
-import landscape from "@/assets/watercolor-landscape.jpg";
-import blossom from "@/assets/blossom-panel.jpg";
-import moodboard from "@/assets/moodboard.jpg";
+import portraitMobile from "@/assets/portrait-mobile.webp.asset.json";
+import portraitDesktop from "@/assets/portrait-desktop.webp.asset.json";
+import landscapeMobile from "@/assets/landscape-mobile.webp.asset.json";
+import landscapeDesktop from "@/assets/landscape-desktop.webp.asset.json";
+import blossomMobile from "@/assets/blossom-mobile.webp.asset.json";
+import blossomDesktop from "@/assets/blossom-desktop.webp.asset.json";
+import moodboardMobile from "@/assets/moodboard-mobile.webp.asset.json";
+import moodboardDesktop from "@/assets/moodboard-desktop.webp.asset.json";
 import proj1 from "@/assets/proj-1.jpg";
 import proj2 from "@/assets/proj-2.jpg";
 import proj3 from "@/assets/proj-3.jpg";
@@ -29,11 +33,43 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [
+      { rel: "preload", as: "image", href: portraitMobile.url, media: "(max-width: 767px)", fetchPriority: "high" },
+      { rel: "preload", as: "image", href: portraitDesktop.url, media: "(min-width: 768px)", fetchPriority: "high" },
+    ],
   }),
   component: Index,
 });
 
 const projectShots = [proj1, proj2, proj3, proj4];
+
+type ResponsiveArtworkProps = {
+  mobile: string;
+  desktop: string;
+  alt: string;
+  width: number;
+  height: number;
+  className: string;
+  eager?: boolean;
+};
+
+function ResponsiveArtwork({ mobile, desktop, alt, width, height, className, eager = false }: ResponsiveArtworkProps) {
+  return (
+    <picture>
+      <source media="(min-width: 768px)" srcSet={desktop} type="image/webp" />
+      <img
+        src={mobile}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={eager ? "eager" : "lazy"}
+        fetchPriority={eager ? "high" : "auto"}
+        decoding="async"
+        className={className}
+      />
+    </picture>
+  );
+}
 
 const toolkit = [
   { title: "Languages", icon: "</>", tone: "bg-butter/60", items: ["JavaScript", "HTML", "CSS", "SQL"] },
@@ -89,10 +125,10 @@ function Hero() {
               <div className="absolute left-2 top-[24%] h-32 w-32 rounded-full bg-lilac/70" />
               <div className="absolute right-6 top-[8%] h-24 w-24 rounded-full bg-butter/70" />
               <div className="absolute -bottom-2 left-12 h-28 w-28 rounded-full bg-pink/60" />
-              <img src={portrait} alt="Shivani Merchant portrait" width={1024} height={1280} className="relative z-10 w-full rotate-[-3deg] drop-shadow-2xl" />
+              <ResponsiveArtwork mobile={portraitMobile.url} desktop={portraitDesktop.url} alt="Shivani Merchant portrait" width={928} height={1152} eager className="relative z-10 w-full rotate-[-3deg] drop-shadow-2xl" />
             </div>
           </div>
-          <img src={landscape} alt="Watercolor mountains and pagoda" width={1920} height={640} className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-24 w-full object-cover object-bottom opacity-55" />
+          <ResponsiveArtwork mobile={landscapeMobile.url} desktop={landscapeDesktop.url} alt="Watercolor mountains and pagoda" width={1600} height={533} className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-24 w-full object-cover object-bottom opacity-55" />
         </div>
 
         <div id="about" className="card-soft relative overflow-hidden px-6 py-8 md:col-span-3">
@@ -117,7 +153,7 @@ function Hero() {
         </div>
 
         <div id="skills" className="card-soft relative overflow-hidden px-5 py-8 md:col-span-3">
-          <img src={blossom} alt="" aria-hidden="true" width={768} height={1280} loading="lazy" className="pointer-events-none absolute -right-8 top-0 h-full w-28 object-cover opacity-70" />
+          <ResponsiveArtwork mobile={blossomMobile.url} desktop={blossomDesktop.url} alt="" width={768} height={1280} className="pointer-events-none absolute -right-8 top-0 h-full w-28 object-cover opacity-70" />
           <div className="relative z-10 pr-10 sm:pr-16">
             <h2 className="display text-2xl text-navy">My Toolkit ✎</h2>
             <p className="mt-2 text-xs leading-5 text-navy/65">I’m technical, but technology is just one part of how I solve problems.</p>
@@ -153,7 +189,7 @@ function Work() {
           {projects.map((project, i) => (
             <Reveal key={project.title} delay={i * 60}>
               <article className="flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white">
-                <img src={projectShots[i]} alt={project.title} width={944} height={704} loading="lazy" className="aspect-[4/3] w-full object-cover sm:h-32 sm:aspect-auto xl:h-24" />
+                <img src={projectShots[i]} alt={project.title} width={944} height={704} loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover sm:h-32 sm:aspect-auto xl:h-24" />
                 <div className="flex flex-1 flex-col p-3.5">
                   <h3 className="text-sm font-bold text-navy">{project.title}</h3>
                    <p className="mt-2 text-xs leading-5 text-navy/60 sm:text-[10px] sm:leading-4">{project.made}</p>
@@ -193,7 +229,7 @@ function Work() {
         <p className="mt-1 text-xs text-navy/60">A little moodboard of the things that light me up.</p>
         <div className="mt-5 grid gap-3 sm:grid-cols-[1.05fr_0.95fr]">
           <div className="relative overflow-hidden rounded-xl">
-            <img src={moodboard} alt="Moodboard of films, travel, food, books and photography" width={1024} height={1024} loading="lazy" className="h-full min-h-56 w-full object-cover" />
+            <ResponsiveArtwork mobile={moodboardMobile.url} desktop={moodboardDesktop.url} alt="Moodboard of films, travel, food, books and photography" width={1024} height={1024} className="h-full min-h-56 w-full object-cover" />
           </div>
           <div className="space-y-1.5">
             {interests.map((item) => (
@@ -234,7 +270,7 @@ function More() {
         </div>
       </div>
       <div className="card-soft relative min-h-64 overflow-hidden md:col-span-4">
-        <img src={blossom} alt="Cherry blossoms over a watercolor landscape" width={768} height={1280} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <ResponsiveArtwork mobile={blossomMobile.url} desktop={blossomDesktop.url} alt="Cherry blossoms over a watercolor landscape" width={768} height={1280} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute bottom-5 left-5 right-5 rounded-xl bg-white/85 p-4 backdrop-blur-sm">
           <p className="eyebrow text-navy/50">Now studying</p>
           <p className="mt-2 text-sm font-bold text-navy">{education[0]?.degree}</p>
@@ -249,7 +285,7 @@ function Contact() {
   return (
     <section id="contact" className="portfolio-grid">
       <div className="card-soft relative overflow-hidden px-5 py-14 text-center md:col-span-12">
-        <img src={landscape} alt="Watercolor landscape with cherry blossoms" width={1920} height={640} loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-80" />
+        <ResponsiveArtwork mobile={landscapeMobile.url} desktop={landscapeDesktop.url} alt="Watercolor landscape with cherry blossoms" width={1600} height={533} className="absolute inset-0 h-full w-full object-cover opacity-80" />
         <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="display text-3xl text-navy md:text-5xl">Let’s Create Something Great <span className="text-gold">✦</span></h2>
           <p className="mt-3 text-sm leading-6 text-navy/70">Have a project in mind, a question, or just want to say hi? I’d love to hear from you.</p>
