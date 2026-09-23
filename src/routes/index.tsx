@@ -153,8 +153,8 @@ function Hero() {
         </div>
 
         <div id="skills" className="card-soft relative overflow-hidden px-5 py-8 md:col-span-3">
-          <ResponsiveArtwork mobile={blossomMobile.url} desktop={blossomDesktop.url} alt="" width={768} height={1280} className="pointer-events-none absolute -right-8 top-0 h-full w-28 object-cover opacity-70" />
-          <div className="relative z-10 pr-10 sm:pr-16">
+          <ResponsiveArtwork mobile={blossomMobile.url} desktop={blossomDesktop.url} alt="" width={768} height={1280} className="pointer-events-none mb-6 h-32 w-full rounded-xl object-cover object-[center_32%] opacity-80 sm:absolute sm:-right-8 sm:top-0 sm:mb-0 sm:h-full sm:w-28 sm:rounded-none sm:object-center sm:opacity-70" />
+          <div className="relative z-10 sm:pr-16">
             <h2 className="display text-2xl text-navy">My Toolkit ✎</h2>
             <p className="mt-2 text-xs leading-5 text-navy/65">I’m technical, but technology is just one part of how I solve problems.</p>
             <div className="mt-5 space-y-2.5">
