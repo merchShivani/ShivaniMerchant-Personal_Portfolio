@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/portfolio/Nav";
 import { Reveal } from "@/components/Reveal";
 import portraitMobile from "@/assets/portrait-mobile.webp.asset.json";
@@ -322,7 +322,7 @@ function Index() {
       <footer className="mx-auto grid w-[min(100%-1.5rem,1560px)] gap-4 py-6 text-center text-[10px] text-navy/60 sm:flex sm:flex-wrap sm:items-center sm:justify-between sm:text-left">
         <p>© {new Date().getFullYear()} Shivani Merchant <span className="hidden sm:inline">&nbsp;|&nbsp;</span><span className="block sm:inline">Built with curiosity, creativity and a lot of ♡</span></p>
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 font-semibold sm:justify-end">
-          <a href="#top">Home</a><a href="#about">About</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+          <a href="#top">Home</a><a href="#about">About</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a><Link to="/links">Links ♡</Link>
         </div>
       </footer>
     </main>
