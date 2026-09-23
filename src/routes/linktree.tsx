@@ -43,10 +43,22 @@ const tiles: Tile[] = [
 const marqueeWords = ["Product Innovation", "Design", "Technology", "Storytelling", "Human Experience", "Creativity"];
 const marqueeTrack = [...marqueeWords, ...marqueeWords, ...marqueeWords, ...marqueeWords];
 
+const emailChoices = [
+  { label: "Gmail", icon: "M", dot: "bg-pink", note: "Opens a new Gmail draft", href: gmailCompose },
+  { label: "Outlook", icon: "O", dot: "bg-sky", note: "Opens a new Outlook draft", href: outlookCompose },
+  { label: "Default mail app", icon: "✉", dot: "bg-gold", note: "Opens your phone's mail app", href: `mailto:${contact.email}` },
+];
+
 function LinktreePage() {
+  const [emailOpen, setEmailOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const handleEmailClick = () => {
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setEmailOpen(true);
+  };
+
+  const handleCopy = () => {
     navigator.clipboard?.writeText(contact.email).then(() => {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2500);
