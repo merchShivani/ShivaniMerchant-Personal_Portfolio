@@ -278,6 +278,11 @@
   animation: splash-bloom 1.2s ease-out 0.15s both;
 }
 
+@utility splash-fan {
+  animation: splash-fan 2.4s ease-in-out 0.15s both;
+  transform-origin: 85% 90%;
+}
+
 @utility splash-fade {
   animation: splash-fade 0.7s ease-in forwards;
 }
