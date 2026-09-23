@@ -13,7 +13,7 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-navy/10 bg-paper/90 backdrop-blur-md">
-      <nav className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 md:px-8">
+      <nav className="mx-auto grid h-16 max-w-[1600px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 md:flex md:justify-between md:px-8">
         <a href="#top" className="script text-3xl text-navy" aria-label="Shivani Merchant home">Sm<span className="align-top text-sm text-coral">♡</span></a>
         <ul className="hidden items-center gap-7 md:flex">{links.map((link) => <li key={link.id}><a href={`#${link.id}`} className="text-[11px] font-semibold text-navy transition-colors hover:text-coral">{link.label}</a></li>)}</ul>
         <a href="#contact" className="hidden rounded-full bg-pink px-5 py-2.5 text-xs font-bold text-navy transition-transform hover:-translate-y-0.5 md:inline-flex">Let’s talk →</a>
