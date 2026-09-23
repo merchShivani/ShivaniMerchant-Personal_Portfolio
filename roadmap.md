@@ -13,3 +13,4 @@
 - [x] Attach uploaded resume PDF to the /links resume button (CDN-hosted, downloads as Shivani-Merchant-Resume.pdf)
 
 - [x] /links: removed blossom strip, compacted to fit one screen without scrolling (mobile single-column, desktop side-by-side) — verified 390×844, 855×606, 1280×800, no console errors
+- [x] Add a brand-new second linktree page at /linktree (navy cinematic direction, marquee strip, cream pill buttons) + "Linktree ✦" entries in desktop nav, mobile menu, and footer — verified fits one screen at 390×844 and 1280×800, nav click works, no console errors
