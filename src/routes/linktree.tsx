@@ -111,7 +111,7 @@ function LinktreePage() {
           </Reveal>
           <Reveal delay={80}>
             <h1 className="display mt-4 text-3xl sm:text-4xl">Shivani Merchant<span className="align-top text-lg text-gold sm:text-xl">✦</span></h1>
-            <p className="eyebrow glow-pink mt-2 text-[10px] text-pink-hot sm:text-xs">Product Innovation × Design × Technology × Storytelling</p>
+            <p className="eyebrow glow-gold mt-2 text-[10px] text-gold sm:text-xs">Product Innovation × Design × Technology × Storytelling</p>
             <p className="mx-auto mt-2 max-w-xs text-sm leading-6 text-paper/70 sm:text-base">
               I build creative solutions with technology, a curious mind, and a heart for people.
             </p>
