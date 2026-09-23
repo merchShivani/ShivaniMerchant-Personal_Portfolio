@@ -17,4 +17,4 @@
 - [x] Recolor the /linktree "My Portfolio" button as the primary CTA (vibrant pink with soft glow on plum bg, white icon dot; other tiles stay cream) — verified desktop + mobile, no console errors
 - [x] Linktree: add pink glow border around all CTA tiles (stronger on My Portfolio)
 - [x] Homepage: add SM signature intro splash (plum overlay matching /linktree, ~3s, once per browser session)
-- [x] Splash: replaced the pink heart with a cherry-blossom hand-fan image that fans (waves) through the whole intro — verified desktop + mobile, no console errors
+- [x] Splash: heart → hand-fan → professional pink lotus with a soft glow and gentle sway through the whole intro — verified desktop + mobile, no console errors

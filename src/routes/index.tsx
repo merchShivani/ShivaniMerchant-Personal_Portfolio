@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import fanArt from "@/assets/fan.png";
+import lotusArt from "@/assets/lotus.png";
 import { Nav } from "@/components/portfolio/Nav";
 import { Reveal } from "@/components/Reveal";
 import portraitMobile from "@/assets/portrait-mobile.webp.asset.json";
@@ -324,7 +324,7 @@ function Splash() {
       <div className="relative z-10 text-center">
         <p className="splash-logo script inline-flex items-center gap-3 text-8xl text-paper sm:text-9xl">
           Sm
-          <img src={fanArt} alt="" width={1024} height={1024} className="splash-fan inline-block h-[1.5em] w-auto align-middle drop-shadow-[0_0_22px_oklch(0.71_0.16_358_/_0.5)]" />
+          <img src={lotusArt} alt="" loading="eager" width={1024} height={1024} className="splash-lotus inline-block h-[1.35em] w-auto align-middle drop-shadow-[0_0_26px_oklch(0.71_0.16_358_/_0.55)]" />
         </p>
         <p className="splash-tagline eyebrow mt-3 text-[11px] font-bold uppercase text-paper/80 sm:text-xs">
           welcome to my world <span className="text-gold">✦</span>
