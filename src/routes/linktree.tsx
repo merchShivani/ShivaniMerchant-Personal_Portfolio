@@ -125,7 +125,7 @@ function LinktreePage() {
                 <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-bold text-navy md:h-11 md:w-11 ${tile.dot}`}>{tile.icon}</span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-base font-bold leading-tight md:text-lg">{tile.label}</span>
-                  <span className="mt-0.5 block truncate text-[11px] font-semibold text-navy/50 md:text-xs">{tile.label === "Email Me" && copied ? "Copied to clipboard ♡" : tile.note}</span>
+                  <span className="mt-0.5 block truncate text-[11px] font-semibold text-navy/50 md:text-xs">{tile.note}</span>
                 </span>
                 <span className="shrink-0 text-base text-navy/60 md:text-lg" aria-hidden>↗</span>
               </span>
@@ -135,7 +135,7 @@ function LinktreePage() {
                 {tile.internal ? (
                   <Link to="/">{inner}</Link>
                 ) : (
-                  <a href={tile.href} target={tile.href.startsWith("mailto:") ? undefined : "_blank"} rel="noreferrer" download={tile.download ? "Shivani-Merchant-Resume.pdf" : undefined} onClick={tile.label === "Email Me" ? handleEmailClick : undefined}>{inner}</a>
+                  <a href={tile.href} target={tile.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" download={tile.download ? "Shivani-Merchant-Resume.pdf" : undefined} onClick={tile.label === "Email Me" ? handleEmailClick : undefined}>{inner}</a>
                 )}
               </Reveal>
             );
