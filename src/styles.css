@@ -253,13 +253,10 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes splash-lotus {
-  0% { opacity: 0; transform: rotate(-7deg) scale(0.7); filter: blur(6px); }
-  14% { opacity: 1; transform: rotate(3deg) scale(1); filter: blur(0); }
-  36% { transform: rotate(-5deg) scale(1); }
-  58% { transform: rotate(4deg) scale(1); }
-  80% { transform: rotate(-3deg) scale(1); }
-  100% { opacity: 1; transform: rotate(0deg) scale(1); }
+@keyframes splash-letter {
+  0% { opacity: 0; clip-path: inset(0 100% 0 0); transform: translateY(0.08em) scale(0.94); filter: blur(5px); }
+  40% { opacity: 1; clip-path: inset(0 40% 0 0); filter: blur(0); }
+  100% { opacity: 1; clip-path: inset(0 -8% 0 0); transform: translateY(0) scale(1); filter: blur(0); }
 }
 
 @keyframes splash-fade {
@@ -278,9 +275,8 @@
   animation: splash-bloom 1.2s ease-out 0.15s both;
 }
 
-@utility splash-lotus {
-  animation: splash-lotus 2.8s ease-in-out 0.15s both;
-  transform-origin: 50% 100%;
+@utility splash-letter {
+  animation: splash-letter 1.9s cubic-bezier(0.3, 0.7, 0.3, 1) both;
 }
 
 @utility splash-fade {
