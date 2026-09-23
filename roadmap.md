@@ -10,3 +10,4 @@
 - [x] Replace the previous layout with the cream-and-crimson editorial reference composition
 - [x] Restyle Shivani's portrait into the seated, over-the-shoulder reference pose
 - [x] Reposition the hero portrait and add cherry blossoms across the crimson moon
+- [x] Match the new cream-and-crimson single-page editorial reference
