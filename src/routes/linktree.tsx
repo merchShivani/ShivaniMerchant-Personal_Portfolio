@@ -66,7 +66,7 @@ function LinktreePage() {
   };
 
   return (
-    <main className="relative min-h-dvh overflow-hidden bg-navy text-paper">
+    <main className="relative min-h-dvh overflow-hidden bg-[oklch(0.25_0.07_318)] text-paper">
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 -top-16 h-72 w-72 rounded-full bg-pink/25 blur-3xl" />
         <div className="absolute -right-16 top-1/3 h-64 w-64 rounded-full bg-coral/20 blur-3xl" />
@@ -152,7 +152,7 @@ function LinktreePage() {
 
       {emailOpen && (
         <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center" role="dialog" aria-modal="true" aria-label="Choose how to email Shivani">
-          <button type="button" aria-label="Close" className="absolute inset-0 bg-navy/70 backdrop-blur-sm" onClick={() => setEmailOpen(false)} />
+          <button type="button" aria-label="Close" className="absolute inset-0 bg-[oklch(0.22_0.07_318)]/80 backdrop-blur-sm" onClick={() => setEmailOpen(false)} />
           <div className="relative z-10 w-full max-w-sm rounded-t-3xl bg-paper p-5 text-navy shadow-2xl sm:rounded-3xl sm:p-6">
             <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-navy/20 sm:hidden" aria-hidden />
             <h2 className="display text-lg">Email me<span className="align-top text-sm text-coral">✦</span></h2>
