@@ -253,14 +253,12 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes splash-fan {
-  0% { opacity: 0; transform: rotate(-10deg) scale(0.55); filter: blur(6px); }
-  12% { opacity: 1; transform: rotate(8deg) scale(1); filter: blur(0); }
-  28% { transform: rotate(-18deg) scale(1); }
-  44% { transform: rotate(16deg) scale(1); }
-  60% { transform: rotate(-16deg) scale(1); }
-  76% { transform: rotate(14deg) scale(1); }
-  90% { transform: rotate(-8deg) scale(1); }
+@keyframes splash-lotus {
+  0% { opacity: 0; transform: rotate(-7deg) scale(0.7); filter: blur(6px); }
+  14% { opacity: 1; transform: rotate(3deg) scale(1); filter: blur(0); }
+  36% { transform: rotate(-5deg) scale(1); }
+  58% { transform: rotate(4deg) scale(1); }
+  80% { transform: rotate(-3deg) scale(1); }
   100% { opacity: 1; transform: rotate(0deg) scale(1); }
 }
 
@@ -280,9 +278,9 @@
   animation: splash-bloom 1.2s ease-out 0.15s both;
 }
 
-@utility splash-fan {
-  animation: splash-fan 2.8s ease-in-out 0.15s both;
-  transform-origin: 85% 90%;
+@utility splash-lotus {
+  animation: splash-lotus 2.8s ease-in-out 0.15s both;
+  transform-origin: 50% 100%;
 }
 
 @utility splash-fade {
