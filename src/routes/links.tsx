@@ -5,9 +5,10 @@ import portraitDesktop from "@/assets/portrait-desktop.webp.asset.json";
 import blossomMobile from "@/assets/blossom-mobile.webp.asset.json";
 import blossomDesktop from "@/assets/blossom-desktop.webp.asset.json";
 import { contact } from "@/data/portfolio";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
-// ⚠️ PLACEHOLDER — replace with the real link to your resume (PDF or page).
-export const RESUME_URL = "#";
+export const RESUME_URL = resumeAsset.url;
+
 
 export const Route = createFileRoute("/links")({
   head: () => ({
