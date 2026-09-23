@@ -62,10 +62,10 @@ function LinktreePage() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100dvh-2.6rem)] w-full max-w-md flex-col justify-center px-5 py-8 sm:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100dvh-2.6rem)] w-full max-w-md flex-col justify-center px-5 py-5 sm:px-8">
         <header className="text-center">
           <Reveal>
-            <div className="relative mx-auto w-32 sm:w-36">
+            <div className="relative mx-auto w-28 sm:w-32">
               <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-pink/60 via-gold/50 to-coral/60 blur-[2px]" />
               <picture>
                 <source media="(min-width: 768px)" srcSet={portraitDesktop.url} type="image/webp" />
@@ -92,10 +92,10 @@ function LinktreePage() {
           </Reveal>
         </header>
 
-        <nav aria-label="My links" className="mt-6 space-y-2.5">
+        <nav aria-label="My links" className="mt-4 space-y-2">
           {tiles.map((tile, i) => {
             const inner = (
-              <span className="flex min-h-[56px] w-full items-center gap-3 rounded-2xl bg-paper/95 px-4 py-3 text-left text-navy shadow-[0_14px_34px_-24px_oklch(1_0_0)] transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:px-5 md:min-h-[60px] md:gap-4">
+              <span className="flex min-h-[56px] w-full items-center gap-3 rounded-2xl bg-paper/95 px-4 py-3 text-left text-navy shadow-[0_14px_34px_-24px_oklch(1_0_0)] transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:px-5 md:min-h-[56px] md:gap-4">
                 <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-bold text-navy md:h-11 md:w-11 ${tile.dot}`}>{tile.icon}</span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-base font-bold leading-tight md:text-lg">{tile.label}</span>
@@ -116,7 +116,7 @@ function LinktreePage() {
           })}
         </nav>
 
-        <footer className="mt-6 text-center">
+        <footer className="mt-4 text-center">
           <p className="text-[11px] text-paper/60">
             <Link to="/links" className="font-semibold text-paper/80 underline decoration-pink-hot/60 underline-offset-2">Prefer the pastel card? Visit /links</Link>
           </p>
