@@ -103,7 +103,17 @@ function Hero() {
     <section id="top" className="pt-20 md:pt-24">
       <div className="portfolio-grid">
         <div className="card-soft relative overflow-hidden px-5 py-8 md:col-span-6 md:px-9 md:py-10">
-          <div className="grid items-center gap-7 pb-28 sm:min-h-[440px] sm:pb-28 lg:grid-cols-[0.85fr_1.15fr]">
+          <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-br from-pink/25 via-peach/35 to-lilac/25" />
+          <div aria-hidden className="pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-butter/60 blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute -right-12 top-1/4 h-48 w-48 rounded-full bg-lilac/45 blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute -bottom-12 left-1/3 h-44 w-44 rounded-full bg-mint/45 blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute left-1/4 top-1/2 h-32 w-32 rounded-full bg-pink/35 blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute right-8 top-7 text-2xl text-coral/60">✿</div>
+          <div aria-hidden className="pointer-events-none absolute right-16 top-14 text-sm text-gold/70">✦</div>
+          <div aria-hidden className="pointer-events-none absolute left-[44%] top-10 text-xl text-gold/60">✦</div>
+          <div aria-hidden className="pointer-events-none absolute left-8 bottom-36 text-lg text-lilac/80">♡</div>
+          <div aria-hidden className="pointer-events-none absolute right-[38%] bottom-40 text-base text-coral/50">✿</div>
+          <div className="relative z-10 grid items-center gap-7 pb-28 sm:min-h-[440px] sm:pb-28 lg:grid-cols-[0.85fr_1.15fr]">
             <div className="relative z-10 min-w-0">
               <h1 className="display text-4xl text-navy sm:text-5xl lg:text-6xl">
                 Hi, I’m<br />Shivani<span className="align-top text-2xl text-gold">✦</span>
